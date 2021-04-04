@@ -74,12 +74,11 @@ namespace interfaces.productos
                     tabla.cargarSinContadorRegistros();
 
                     imgServidor.Visible = conexion_remota;
-                    btnAgregar.Visible = conexion_remota;
+                    btnAgregar.Visible = true;
                 }
             }
             valores_cargados = true;
-            colocando_datos();
-            
+            colocando_datos(); 
         }
 
         private List<DataTable> cargandoDatos()
@@ -572,6 +571,7 @@ namespace interfaces.productos
                 using (espera_datos.splash_espera es = new espera_datos.splash_espera())
                 {
                     es.Funcion_recargar = recargandoDatos;
+                    es.Tipo_operacion = 1;
                     if (es.ShowDialog() == DialogResult.OK)
                     {
                         tabla = new utilitarios.cargar_tablas(tabla_productos, txtBusqueda, es.Datos, "productoCod");

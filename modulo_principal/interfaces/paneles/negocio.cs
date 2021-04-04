@@ -30,7 +30,7 @@ namespace interfaces.paneles
         private void button2_Click(object sender, EventArgs e)
         { 
 
-            if (MessageBox.Show("¿Deseas conectarte a la base de datos remota?", "Base de datos remota", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            /*if (MessageBox.Show("¿Deseas conectarte a la base de datos remota?", "Base de datos remota", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 con = new conexiones_BD.Conexion();
                 if (con.probando_conexion())
@@ -56,13 +56,13 @@ namespace interfaces.paneles
                 }
             }
             else
-            {
+            {*/
                 productos.modificacion_de_productos_en_tabla man = new productos.modificacion_de_productos_en_tabla();
                 man.Conexion_remota = conexion_remota;
                 man.ShowDialog();
                 conexion_remota = false;
-            }
-            /*
+            /*}
+            
             using (espera_datos.splash_espera fe = new espera_datos.splash_espera())
             {             
                 fe.Funcion_recargar = cargarDatos;

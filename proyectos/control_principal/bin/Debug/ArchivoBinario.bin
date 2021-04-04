@@ -268,3 +268,12 @@ INSERT INTO productos (nom_producto,fecha_ingreso,idcategoria,idmarca) VALUES('P
 INSERT INTO proveedores_productos (idproveedor,idproducto) VALUES('2','6052');
 INSERT INTO productos (nom_producto,fecha_ingreso,idcategoria,idmarca) VALUES('LENTES DE SOL LA LUPONA','2021-04-04 10:53:14','60','53');
 INSERT INTO proveedores_productos (idproveedor,idproducto) VALUES('2','6254');
+INSERT INTO productos (nom_producto,fecha_ingreso,idcategoria,idmarca) VALUES('ESTA ES UNA PRUEBA','2021-04-04 11:06:34','60','53');
+INSERT INTO proveedores_productos (idproveedor,idproducto) VALUES('2','6255');
+INSERT INTO productos (nom_producto,fecha_ingreso,idcategoria,idmarca) VALUES('OTRA PRUEBA','2021-04-04 11:10:36','60','53');
+INSERT INTO proveedores_productos (idproveedor,idproducto) VALUES('2','6256');
+INSERT INTO productos (nom_producto,fecha_ingreso,idcategoria,idmarca) VALUES('PRUEBAS2','2021-04-04 11:16:14','60','53');
+INSERT INTO proveedores_productos (idproveedor,idproducto) VALUES('2','6257');
+INSERT INTO productos (nom_producto,fecha_ingreso,idcategoria,idmarca) VALUES('ESTA ES UNA PRUEBA DEFINITIVA
+','2021-04-04 11:27:56','60','53');
+INSERT INTO proveedores_productos (idproveedor,idproducto) VALUES('2','6258');

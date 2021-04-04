@@ -131,7 +131,7 @@
             // 
             this.precio.BackColor = System.Drawing.SystemColors.Control;
             this.precio.DecimalPlaces = 2;
-            this.precio.Location = new System.Drawing.Point(16, 264);
+            this.precio.Location = new System.Drawing.Point(16, 249);
             this.precio.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -147,7 +147,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.BackColor = System.Drawing.Color.Transparent;
-            this.label14.Location = new System.Drawing.Point(12, 242);
+            this.label14.Location = new System.Drawing.Point(12, 227);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(51, 19);
             this.label14.TabIndex = 4;
@@ -187,7 +187,7 @@
             // 
             this.fecha.CustomFormat = "dd/MM/yyyy HH:mm:ss";
             this.fecha.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.fecha.Location = new System.Drawing.Point(88, 264);
+            this.fecha.Location = new System.Drawing.Point(88, 249);
             this.fecha.Name = "fecha";
             this.fecha.Size = new System.Drawing.Size(217, 26);
             this.fecha.TabIndex = 8;
