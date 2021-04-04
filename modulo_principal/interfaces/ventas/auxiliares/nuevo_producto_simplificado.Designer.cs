@@ -57,7 +57,7 @@
             this.panelTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTitulo.Location = new System.Drawing.Point(0, 0);
             this.panelTitulo.Name = "panelTitulo";
-            this.panelTitulo.Size = new System.Drawing.Size(665, 46);
+            this.panelTitulo.Size = new System.Drawing.Size(319, 46);
             this.panelTitulo.TabIndex = 7;
             this.panelTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitulo_MouseDown);
             // 
@@ -66,7 +66,7 @@
             this.cerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cerrar.Image = ((System.Drawing.Image)(resources.GetObject("cerrar.Image")));
-            this.cerrar.Location = new System.Drawing.Point(618, 6);
+            this.cerrar.Location = new System.Drawing.Point(282, 6);
             this.cerrar.Name = "cerrar";
             this.cerrar.Size = new System.Drawing.Size(32, 32);
             this.cerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -79,15 +79,15 @@
             this.lblEncanezado.AutoSize = true;
             this.lblEncanezado.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEncanezado.ForeColor = System.Drawing.Color.White;
-            this.lblEncanezado.Location = new System.Drawing.Point(194, 9);
+            this.lblEncanezado.Location = new System.Drawing.Point(100, 9);
             this.lblEncanezado.Name = "lblEncanezado";
-            this.lblEncanezado.Size = new System.Drawing.Size(154, 23);
+            this.lblEncanezado.Size = new System.Drawing.Size(146, 23);
             this.lblEncanezado.TabIndex = 0;
-            this.lblEncanezado.Text = "Nuevo productos";
+            this.lblEncanezado.Text = "Nuevo producto";
             // 
             // txtCodigo
             // 
-            this.txtCodigo.BackColor = System.Drawing.Color.Silver;
+            this.txtCodigo.BackColor = System.Drawing.SystemColors.Control;
             this.txtCodigo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCodigo.Location = new System.Drawing.Point(16, 80);
             this.txtCodigo.Name = "txtCodigo";
@@ -108,12 +108,12 @@
             // 
             // txtnombreP
             // 
-            this.txtnombreP.BackColor = System.Drawing.Color.Silver;
+            this.txtnombreP.BackColor = System.Drawing.SystemColors.Control;
             this.txtnombreP.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtnombreP.Location = new System.Drawing.Point(311, 80);
+            this.txtnombreP.Location = new System.Drawing.Point(16, 141);
             this.txtnombreP.Multiline = true;
             this.txtnombreP.Name = "txtnombreP";
-            this.txtnombreP.Size = new System.Drawing.Size(339, 76);
+            this.txtnombreP.Size = new System.Drawing.Size(289, 76);
             this.txtnombreP.TabIndex = 3;
             this.txtnombreP.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtCodigo_KeyUp);
             // 
@@ -121,7 +121,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Location = new System.Drawing.Point(307, 58);
+            this.label1.Location = new System.Drawing.Point(12, 119);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(144, 19);
             this.label1.TabIndex = 2;
@@ -129,9 +129,9 @@
             // 
             // precio
             // 
-            this.precio.BackColor = System.Drawing.Color.Silver;
+            this.precio.BackColor = System.Drawing.SystemColors.Control;
             this.precio.DecimalPlaces = 2;
-            this.precio.Location = new System.Drawing.Point(16, 131);
+            this.precio.Location = new System.Drawing.Point(16, 264);
             this.precio.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -147,7 +147,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.BackColor = System.Drawing.Color.Transparent;
-            this.label14.Location = new System.Drawing.Point(12, 109);
+            this.label14.Location = new System.Drawing.Point(12, 242);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(51, 19);
             this.label14.TabIndex = 4;
@@ -158,7 +158,7 @@
             // 
             this.btnCancelar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelar.Location = new System.Drawing.Point(333, 180);
+            this.btnCancelar.Location = new System.Drawing.Point(162, 310);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 29);
             this.btnCancelar.TabIndex = 7;
@@ -170,7 +170,7 @@
             // 
             this.btnGuardar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuardar.Location = new System.Drawing.Point(252, 180);
+            this.btnGuardar.Location = new System.Drawing.Point(81, 310);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 29);
             this.btnGuardar.TabIndex = 6;
@@ -187,7 +187,7 @@
             // 
             this.fecha.CustomFormat = "dd/MM/yyyy HH:mm:ss";
             this.fecha.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.fecha.Location = new System.Drawing.Point(88, 131);
+            this.fecha.Location = new System.Drawing.Point(88, 264);
             this.fecha.Name = "fecha";
             this.fecha.Size = new System.Drawing.Size(217, 26);
             this.fecha.TabIndex = 8;
@@ -196,8 +196,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Silver;
-            this.ClientSize = new System.Drawing.Size(665, 221);
+            this.BackColor = System.Drawing.SystemColors.Control;
+            this.ClientSize = new System.Drawing.Size(319, 354);
             this.Controls.Add(this.fecha);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardar);

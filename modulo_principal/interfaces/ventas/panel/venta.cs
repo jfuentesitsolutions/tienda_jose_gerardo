@@ -1827,7 +1827,7 @@ namespace interfaces.ventas.panel
         {
             auxiliares.nuevo_producto_simplificado np = new auxiliares.nuevo_producto_simplificado();
             np.txtCodigo.Text = txtBusqueda.Text;
-            np.Conexion_remota = true;
+            np.Conexion_remota = false;
             np.ShowDialog();
 
             if (np.Ingresado)

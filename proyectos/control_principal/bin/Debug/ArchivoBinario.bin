@@ -266,3 +266,5 @@ INSERT INTO productos (nom_producto,fecha_ingreso,idcategoria,idmarca) VALUES('F
 INSERT INTO proveedores_productos (idproveedor,idproducto) VALUES('2','5947');
 INSERT INTO productos (nom_producto,fecha_ingreso,idcategoria,idmarca) VALUES('PRUEBA','2020-11-24 16:37:27','60','53');
 INSERT INTO proveedores_productos (idproveedor,idproducto) VALUES('2','6052');
+INSERT INTO productos (nom_producto,fecha_ingreso,idcategoria,idmarca) VALUES('LENTES DE SOL LA LUPONA','2021-04-04 10:53:14','60','53');
+INSERT INTO proveedores_productos (idproveedor,idproducto) VALUES('2','6254');
