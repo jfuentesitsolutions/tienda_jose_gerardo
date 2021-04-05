@@ -277,3 +277,5 @@ INSERT INTO proveedores_productos (idproveedor,idproducto) VALUES('2','6257');
 INSERT INTO productos (nom_producto,fecha_ingreso,idcategoria,idmarca) VALUES('ESTA ES UNA PRUEBA DEFINITIVA
 ','2021-04-04 11:27:56','60','53');
 INSERT INTO proveedores_productos (idproveedor,idproducto) VALUES('2','6258');
+INSERT INTO productos (nom_producto,fecha_ingreso,idcategoria,idmarca) VALUES('PRUEBA DANI','2021-04-04 20:03:14','60','53');
+INSERT INTO proveedores_productos (idproveedor,idproducto) VALUES('2','6259');

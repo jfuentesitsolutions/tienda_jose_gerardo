@@ -149,12 +149,12 @@ namespace control_principal
             }
             else
             {
-                //this.funcionamientoBotones(3);
+                this.funcionamientoBotones(3);
                 if (this.panel_contenidos.Controls.Count > 0)
                 {
-                    //this.panel_contenidos.Controls.RemoveAt(0);
-                    //this.colocarPanel(new interfaces.paneles.configuracion());
-                    MessageBox.Show("Por el momento este modulo esta en mantenimiento", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    this.panel_contenidos.Controls.RemoveAt(0);
+                    this.colocarPanel(new interfaces.paneles.configuracion());
+                   // MessageBox.Show("Por el momento este modulo esta en mantenimiento", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
