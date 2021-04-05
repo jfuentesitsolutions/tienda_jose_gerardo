@@ -71,8 +71,8 @@ namespace interfaces.productos
         {
             if (!conexion_remota)
             {
-                btnAgregar.Visible = false;
-                btnEliminar.Visible = false;
+                btnAgregar.Visible = true;
+                btnEliminar.Visible = true;
             }
 
             recargaDatos();

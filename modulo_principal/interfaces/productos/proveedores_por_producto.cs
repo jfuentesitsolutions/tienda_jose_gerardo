@@ -34,8 +34,8 @@ namespace interfaces.productos
 
             if (!conexion_remota)
             {
-                btnAgrega.Visible = false;
-                btnEliminar.Visible = false;
+                btnAgrega.Visible = true;
+                btnEliminar.Visible = true;
             }
 
             DataGridViewComboBoxColumn comboboxColumn = tabla_proveedores.Columns[2] as DataGridViewComboBoxColumn;
