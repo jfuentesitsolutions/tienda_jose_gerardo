@@ -108,6 +108,29 @@ namespace conexiones_BD.clases
             return datos;
         }
 
+        public static DataTable CODIGOS_REPORTE_INVENTARIO(bool cr)
+        {
+            DataTable datos = null;
+            string sentencia = @"SELECT c.codigo, c.estado, pc.idproducto
+                                FROM productos_codigos pc
+                                INNER JOIN codigos c on pc.idcodigo=c.idcodigo
+                                INNER JOIN productos p on pc.idproducto=p.idproducto
+                                ;";
+            operaciones op = new operaciones();
+            op.Conexion_remota = cr;
+            try
+            {
+                datos = op.Consultar(sentencia);
+            }
+            catch
+            {
+                datos = null;
+            }
+
+
+            return datos;
+        }
+
         public static DataTable cargarCodigosTodos(string idpro, bool cr)
         {
             DataTable datos = null;

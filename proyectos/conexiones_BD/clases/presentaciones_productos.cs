@@ -290,6 +290,30 @@ namespace conexiones_BD.clases
 
             return Datos;
         }
+
+        public static DataTable PRESENTACIONES_INVENTARIO(bool cr)
+        {
+            DataTable Datos = new DataTable();
+            String Consulta;
+            Consulta = @"SELECT p.nombre_presentacion, pp.tipo, pp.precio, pp.cantidad_unidades, pp.estado, pp.idsucursal_producto
+FROM presentaciones_productos pp
+INNER JOIN presentaciones p on pp.idpresentacion=p.idpresentacion
+INNER JOIN sucursales_productos sp on pp.idsucursal_producto=sp.idsucursal_producto
+;";
+            operaciones oOperacion = new operaciones();
+            oOperacion.Conexion_remota = cr;
+            try
+            {
+                Datos = oOperacion.Consultar(Consulta);
+            }
+            catch
+            {
+                Datos = new DataTable();
+            }
+
+            return Datos;
+        }
+
         public static DataTable presentacionesXproducto2(string idsuc_p)
         {
             DataTable Datos = new DataTable();

@@ -76,6 +76,7 @@ namespace interfaces.ventas.panel
         {
             utilitarios.maneja_fechas fe = new utilitarios.maneja_fechas();
             Reportes.Diseño.reporteVentasaldia repo = new Reportes.Diseño.reporteVentasaldia();
+            Console.WriteLine("Cantidad de registros: "+conexiones_BD.clases.ventas.ventas.ventas_diarias(fe.fechaCortaMysql(fecha), sesion.DatosRegistro[1]).Rows.Count);
             repo.SetDataSource(conexiones_BD.clases.ventas.ventas.ventas_diarias(fe.fechaCortaMysql(fecha), sesion.DatosRegistro[1]));
             ventas.ReportSource = repo;
             calcularTotalVentas();

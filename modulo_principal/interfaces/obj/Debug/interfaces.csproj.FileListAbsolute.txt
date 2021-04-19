@@ -993,6 +993,11 @@ H:\proyecto_tienda\tienda_jose_gerardo\modulo_principal\interfaces\bin\Debug\Bar
 H:\proyecto_tienda\tienda_jose_gerardo\modulo_principal\interfaces\bin\Debug\Bunifu_UI_v1.52.dll
 H:\proyecto_tienda\tienda_jose_gerardo\modulo_principal\interfaces\bin\Debug\CircularProgressBar.dll
 H:\proyecto_tienda\tienda_jose_gerardo\modulo_principal\interfaces\bin\Debug\conexiones_BD.dll
+H:\proyecto_tienda\tienda_jose_gerardo\modulo_principal\interfaces\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll
+H:\proyecto_tienda\tienda_jose_gerardo\modulo_principal\interfaces\bin\Debug\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+H:\proyecto_tienda\tienda_jose_gerardo\modulo_principal\interfaces\bin\Debug\CrystalDecisions.ReportSource.dll
+H:\proyecto_tienda\tienda_jose_gerardo\modulo_principal\interfaces\bin\Debug\CrystalDecisions.Shared.dll
+H:\proyecto_tienda\tienda_jose_gerardo\modulo_principal\interfaces\bin\Debug\CrystalDecisions.Windows.Forms.dll
 H:\proyecto_tienda\tienda_jose_gerardo\modulo_principal\interfaces\bin\Debug\espera_datos.dll
 H:\proyecto_tienda\tienda_jose_gerardo\modulo_principal\interfaces\bin\Debug\ExcelViewer.dll
 H:\proyecto_tienda\tienda_jose_gerardo\modulo_principal\interfaces\bin\Debug\FlashControlV71.dll
@@ -1004,6 +1009,7 @@ H:\proyecto_tienda\tienda_jose_gerardo\modulo_principal\interfaces\bin\Debug\Win
 H:\proyecto_tienda\tienda_jose_gerardo\modulo_principal\interfaces\bin\Debug\MySql.Data.dll
 H:\proyecto_tienda\tienda_jose_gerardo\modulo_principal\interfaces\bin\Debug\MySqlBackup.dll
 H:\proyecto_tienda\tienda_jose_gerardo\modulo_principal\interfaces\bin\Debug\LibPrintTicket.dll
+H:\proyecto_tienda\tienda_jose_gerardo\modulo_principal\interfaces\bin\Debug\AxShockwaveFlashObjects.dll
 H:\proyecto_tienda\tienda_jose_gerardo\modulo_principal\interfaces\bin\Debug\ShockwaveFlashObjects.dll
 H:\proyecto_tienda\tienda_jose_gerardo\modulo_principal\interfaces\bin\Debug\Google.Protobuf.dll
 H:\proyecto_tienda\tienda_jose_gerardo\modulo_principal\interfaces\bin\Debug\Zstandard.Net.dll
@@ -1075,6 +1081,7 @@ H:\proyecto_tienda\tienda_jose_gerardo\modulo_principal\interfaces\obj\Debug\int
 H:\proyecto_tienda\tienda_jose_gerardo\modulo_principal\interfaces\obj\Debug\interfaces.panel_inicio.inicio.resources
 H:\proyecto_tienda\tienda_jose_gerardo\modulo_principal\interfaces\obj\Debug\interfaces.paneles.inventarios.resources
 H:\proyecto_tienda\tienda_jose_gerardo\modulo_principal\interfaces\obj\Debug\interfaces.paneles.negocio.resources
+H:\proyecto_tienda\tienda_jose_gerardo\modulo_principal\interfaces\obj\Debug\interfaces.paneles.reporteria.resources
 H:\proyecto_tienda\tienda_jose_gerardo\modulo_principal\interfaces\obj\Debug\interfaces.productos.agregar_presentacion.resources
 H:\proyecto_tienda\tienda_jose_gerardo\modulo_principal\interfaces\obj\Debug\interfaces.productos.agregar_proveedores.resources
 H:\proyecto_tienda\tienda_jose_gerardo\modulo_principal\interfaces\obj\Debug\interfaces.productos.existencias.resources
@@ -1085,6 +1092,7 @@ H:\proyecto_tienda\tienda_jose_gerardo\modulo_principal\interfaces\obj\Debug\int
 H:\proyecto_tienda\tienda_jose_gerardo\modulo_principal\interfaces\obj\Debug\interfaces.productos.proveedores_por_producto.resources
 H:\proyecto_tienda\tienda_jose_gerardo\modulo_principal\interfaces\obj\Debug\interfaces.Properties.Resources.resources
 H:\proyecto_tienda\tienda_jose_gerardo\modulo_principal\interfaces\obj\Debug\interfaces.Reportes.Interfaz.estadisticas_clientes.resources
+H:\proyecto_tienda\tienda_jose_gerardo\modulo_principal\interfaces\obj\Debug\interfaces.Reportes.Interfaz.reporte_productos.resources
 H:\proyecto_tienda\tienda_jose_gerardo\modulo_principal\interfaces\obj\Debug\interfaces.Reportes.Interfaz.visor_reportes.resources
 H:\proyecto_tienda\tienda_jose_gerardo\modulo_principal\interfaces\obj\Debug\interfaces.traslados.recepcion_traslados.resources
 H:\proyecto_tienda\tienda_jose_gerardo\modulo_principal\interfaces\obj\Debug\interfaces.traslados.traslados_productos.resources

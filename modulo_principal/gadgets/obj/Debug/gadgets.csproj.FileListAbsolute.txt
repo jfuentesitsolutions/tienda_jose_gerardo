@@ -41,3 +41,8 @@ D:\TiendaGerardo\Proyecto_gerardo\proyecto\modulo_principal\gadgets\obj\Debug\ga
 D:\TiendaGerardo\Proyecto_gerardo\proyecto\modulo_principal\gadgets\obj\Debug\gadgets.dll
 D:\TiendaGerardo\Proyecto_gerardo\proyecto\modulo_principal\gadgets\obj\Debug\gadgets.pdb
 D:\TiendaGerardo\Proyecto_gerardo\proyecto\modulo_principal\gadgets\obj\Debug\gadgets.csprojAssemblyReference.cache
+H:\proyecto_tienda\tienda_jose_gerardo\modulo_principal\gadgets\bin\Debug\gadgets.dll
+H:\proyecto_tienda\tienda_jose_gerardo\modulo_principal\gadgets\bin\Debug\gadgets.pdb
+H:\proyecto_tienda\tienda_jose_gerardo\modulo_principal\gadgets\obj\Debug\gadgets.csproj.CoreCompileInputs.cache
+H:\proyecto_tienda\tienda_jose_gerardo\modulo_principal\gadgets\obj\Debug\gadgets.dll
+H:\proyecto_tienda\tienda_jose_gerardo\modulo_principal\gadgets\obj\Debug\gadgets.pdb
