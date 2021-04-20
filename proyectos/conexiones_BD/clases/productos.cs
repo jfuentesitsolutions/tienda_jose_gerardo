@@ -274,6 +274,46 @@ namespace conexiones_BD.clases
             return Datos;
         }
 
+        public static DataTable PRODUCTOS_REPORTE_INVENTARIO(bool cr)
+        {
+            DataTable Datos = new DataTable();
+            String Consulta;
+            Consulta = @"SELECT p.idproducto, c.codigo, p.nom_producto, ca.nombre_categoria as categoria, 
+                        ma.nombre as marca, es.nombre as estante, sp.existencias as exis_sistema, sp.idsucursal_producto as suc_pro
+                        FROM productos_codigos pc
+                        INNER JOIN codigos c on pc.idcodigo=c.idcodigo
+                        INNER JOIN productos p on pc.idproducto=p.idproducto
+                        INNER JOIN sucursales_productos sp on pc.idproducto=sp.idproducto
+                        INNER JOIN categorias ca on p.idcategoria=ca.idcategoria
+                        INNER JOIN marcas ma on p.idmarca=ma.idmarca
+                        INNER JOIN estantes es on p.idestante=es.idestante
+                        WHERE c.estado=1
+                        GROUP BY p.nom_producto
+                        ;";
+            operaciones oOperacion = new operaciones();
+            try
+            {
+                if (!cr)
+                {
+                    Datos = oOperacion.Consultar(Consulta);
+                }
+                else
+                {
+                    oOperacion.Conexion_remota = true;
+                    Datos = oOperacion.Consultar(Consulta);
+                }
+
+            }
+            catch
+            {
+                Datos = new DataTable();
+            }
+
+
+
+            return Datos;
+        }
+
         public static DataTable CARGAR_TABLA_PRODUCTOS_PARA_MODIFICACIÓN(bool cr)
         {
             DataTable Datos = new DataTable();
@@ -292,6 +332,7 @@ and sp.idproducto = pr.idproducto
 and sp.idutilidadDetalles = u.idutilidad_compra 
 and sp.idutilidadMayoreo = uu.idutilidad_compra
 group by pr.nom_producto order by pr.nom_producto";
+
             conexiones_BD.operaciones oOperacion = new conexiones_BD.operaciones();
 
             try

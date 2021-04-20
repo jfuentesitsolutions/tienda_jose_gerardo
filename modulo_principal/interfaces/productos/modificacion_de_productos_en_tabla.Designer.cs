@@ -257,6 +257,7 @@
             this.codi.HeaderText = "Codigo";
             this.codi.Name = "codi";
             this.codi.ReadOnly = true;
+            this.codi.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.codi.Width = 150;
             // 
             // nombre
@@ -393,6 +394,7 @@
             this.nproveedores.HeaderText = "N° de proveedores";
             this.nproveedores.Name = "nproveedores";
             this.nproveedores.ReadOnly = true;
+            this.nproveedores.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // idum
             // 
@@ -480,6 +482,8 @@
         private System.Windows.Forms.GroupBox grpBuscar;
         private System.Windows.Forms.DataGridView tabla_productos;
         private System.Windows.Forms.TextBox txtBusqueda;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripButton btnAgregar;
         private System.Windows.Forms.DataGridViewTextBoxColumn idpro;
         private System.Windows.Forms.DataGridViewTextBoxColumn idsuc_pro;
         private System.Windows.Forms.DataGridViewTextBoxColumn codi;
@@ -506,7 +510,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn idestante;
         private System.Windows.Forms.DataGridViewTextBoxColumn kardes;
         private System.Windows.Forms.DataGridViewTextBoxColumn esta;
-        private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton btnAgregar;
     }
 }

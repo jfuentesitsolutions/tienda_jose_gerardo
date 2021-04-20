@@ -527,30 +527,41 @@ namespace interfaces.productos
 
         private void tabla_productos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (tabla_productos.Columns[e.ColumnIndex].Index==2)
+            if (tabla_productos.Columns[e.ColumnIndex].Index == 2)
             {
-                mantenimientos.auxiliares.agregaCodigos codi = new mantenimientos.auxiliares.agregaCodigos();
-                codi.Conexion_remota = conexion_remota;
-                codi.Idproducto = tabla_productos.Rows[e.RowIndex].Cells[0].Value.ToString();
-                codi.ShowDialog();
+                if (e.RowIndex != -1)
+                {
+                    mantenimientos.auxiliares.agregaCodigos codi = new mantenimientos.auxiliares.agregaCodigos();
+                    codi.Conexion_remota = conexion_remota;
+                    codi.Idproducto = tabla_productos.Rows[e.RowIndex].Cells[0].Value.ToString();
+                    codi.ShowDialog();
+                }
+                
             }
 
             if (tabla_productos.Columns[e.ColumnIndex].Index == 10)
             {
-                presentaciones_por_producto pre = new presentaciones_por_producto();
-                pre.Conexion_remota = conexion_remota;
-                pre.Idsp = tabla_productos.Rows[e.RowIndex].Cells[1].Value.ToString();
-                pre.ShowDialog();
-                tabla_productos.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = pre.Cantidad_presentaciones;
+                if (e.RowIndex != -1)
+                {
+                    presentaciones_por_producto pre = new presentaciones_por_producto();
+                    pre.Conexion_remota = conexion_remota;
+                    pre.Idsp = tabla_productos.Rows[e.RowIndex].Cells[1].Value.ToString();
+                    pre.ShowDialog();
+                    tabla_productos.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = pre.Cantidad_presentaciones;
+                }
+                
             }
 
             if (tabla_productos.Columns[e.ColumnIndex].Index == 18)
             {
-                proveedores_por_producto pro = new proveedores_por_producto();
-                pro.Idproducto= tabla_productos.Rows[e.RowIndex].Cells[0].Value.ToString();
-                pro.Conexion_remota = conexion_remota;
-                pro.ShowDialog();
-                tabla_productos.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = pro.Numero_registro;
+                if (e.RowIndex != -1)
+                {
+                    proveedores_por_producto pro = new proveedores_por_producto();
+                    pro.Idproducto = tabla_productos.Rows[e.RowIndex].Cells[0].Value.ToString();
+                    pro.Conexion_remota = conexion_remota;
+                    pro.ShowDialog();
+                    tabla_productos.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = pro.Numero_registro;
+                }   
             }
         }
 

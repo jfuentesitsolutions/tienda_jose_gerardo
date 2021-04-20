@@ -19,3 +19,9 @@ D:\TiendaGerardo\Proyecto_gerardo\proyecto\proyectos\ExcelViewer\ExcelViewer\obj
 D:\TiendaGerardo\Proyecto_gerardo\proyecto\proyectos\ExcelViewer\ExcelViewer\obj\Debug\ExcelViewer.csproj.CoreCompileInputs.cache
 D:\TiendaGerardo\Proyecto_gerardo\proyecto\proyectos\ExcelViewer\ExcelViewer\obj\Debug\ExcelViewer.dll
 D:\TiendaGerardo\Proyecto_gerardo\proyecto\proyectos\ExcelViewer\ExcelViewer\obj\Debug\ExcelViewer.pdb
+H:\proyecto_tienda\tienda_jose_gerardo\proyectos\ExcelViewer\ExcelViewer\bin\Debug\ExcelViewer.dll
+H:\proyecto_tienda\tienda_jose_gerardo\proyectos\ExcelViewer\ExcelViewer\bin\Debug\ExcelViewer.pdb
+H:\proyecto_tienda\tienda_jose_gerardo\proyectos\ExcelViewer\ExcelViewer\obj\Debug\ExcelViewer.csprojAssemblyReference.cache
+H:\proyecto_tienda\tienda_jose_gerardo\proyectos\ExcelViewer\ExcelViewer\obj\Debug\ExcelViewer.csproj.CoreCompileInputs.cache
+H:\proyecto_tienda\tienda_jose_gerardo\proyectos\ExcelViewer\ExcelViewer\obj\Debug\ExcelViewer.dll
+H:\proyecto_tienda\tienda_jose_gerardo\proyectos\ExcelViewer\ExcelViewer\obj\Debug\ExcelViewer.pdb

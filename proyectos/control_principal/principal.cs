@@ -164,10 +164,17 @@ namespace control_principal
             if (btnrepo.Location == new Point(5, 251))
             {
                 this.funcionamientoBotones(0);
+                if (this.panel_contenidos.Controls.Count > 0)
+                {
+                    this.panel_contenidos.Controls.RemoveAt(0);
+                    this.colocarPanel(new interfaces.panel_inicio.inicio());
+                }
             }
             else
             {
                 this.funcionamientoBotones(4);
+                this.panel_contenidos.Controls.RemoveAt(0);
+                this.colocarPanel(new interfaces.paneles.reporteria());
             }
         }
 

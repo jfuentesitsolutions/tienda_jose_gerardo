@@ -48,3 +48,8 @@ D:\TiendaGerardo\Proyecto_gerardo\proyecto\proyectos\sessionManager\obj\Debug\se
 D:\TiendaGerardo\Proyecto_gerardo\proyecto\proyectos\sessionManager\obj\Debug\sessionManager.dll
 D:\TiendaGerardo\Proyecto_gerardo\proyecto\proyectos\sessionManager\obj\Debug\sessionManager.pdb
 D:\TiendaGerardo\Proyecto_gerardo\proyecto\proyectos\sessionManager\obj\Debug\sessionManager.csprojAssemblyReference.cache
+H:\proyecto_tienda\tienda_jose_gerardo\proyectos\sessionManager\bin\Debug\sessionManager.dll
+H:\proyecto_tienda\tienda_jose_gerardo\proyectos\sessionManager\bin\Debug\sessionManager.pdb
+H:\proyecto_tienda\tienda_jose_gerardo\proyectos\sessionManager\obj\Debug\sessionManager.csproj.CoreCompileInputs.cache
+H:\proyecto_tienda\tienda_jose_gerardo\proyectos\sessionManager\obj\Debug\sessionManager.dll
+H:\proyecto_tienda\tienda_jose_gerardo\proyectos\sessionManager\obj\Debug\sessionManager.pdb

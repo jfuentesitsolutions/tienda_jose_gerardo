@@ -66,3 +66,14 @@ D:\TiendaGerardo\Proyecto_gerardo\proyecto\proyectos\utilitarios\obj\Debug\utili
 D:\TiendaGerardo\Proyecto_gerardo\proyecto\proyectos\utilitarios\obj\Debug\utilitarios.csproj.CopyComplete
 D:\TiendaGerardo\Proyecto_gerardo\proyecto\proyectos\utilitarios\obj\Debug\utilitarios.dll
 D:\TiendaGerardo\Proyecto_gerardo\proyecto\proyectos\utilitarios\obj\Debug\utilitarios.pdb
+H:\proyecto_tienda\tienda_jose_gerardo\proyectos\utilitarios\bin\Debug\utilitarios.dll
+H:\proyecto_tienda\tienda_jose_gerardo\proyectos\utilitarios\bin\Debug\utilitarios.pdb
+H:\proyecto_tienda\tienda_jose_gerardo\proyectos\utilitarios\bin\Debug\espera_datos.dll
+H:\proyecto_tienda\tienda_jose_gerardo\proyectos\utilitarios\bin\Debug\espera_datos.pdb
+H:\proyecto_tienda\tienda_jose_gerardo\proyectos\utilitarios\obj\Debug\utilitarios.csprojAssemblyReference.cache
+H:\proyecto_tienda\tienda_jose_gerardo\proyectos\utilitarios\obj\Debug\utilitarios.barra_progreso.resources
+H:\proyecto_tienda\tienda_jose_gerardo\proyectos\utilitarios\obj\Debug\utilitarios.csproj.GenerateResource.cache
+H:\proyecto_tienda\tienda_jose_gerardo\proyectos\utilitarios\obj\Debug\utilitarios.csproj.CoreCompileInputs.cache
+H:\proyecto_tienda\tienda_jose_gerardo\proyectos\utilitarios\obj\Debug\utilitarios.csproj.CopyComplete
+H:\proyecto_tienda\tienda_jose_gerardo\proyectos\utilitarios\obj\Debug\utilitarios.dll
+H:\proyecto_tienda\tienda_jose_gerardo\proyectos\utilitarios\obj\Debug\utilitarios.pdb

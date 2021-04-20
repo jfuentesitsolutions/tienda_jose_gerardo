@@ -30,32 +30,32 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(revisar_caja));
             this.panelTitulo = new System.Windows.Forms.Panel();
+            this.cerrar = new System.Windows.Forms.PictureBox();
             this.lblEncanezado = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.lblAnula_Compras = new System.Windows.Forms.Label();
-            this.lblVentaT = new System.Windows.Forms.Label();
-            this.lblVentaF = new System.Windows.Forms.Label();
-            this.lblAnulacion = new System.Windows.Forms.Label();
-            this.lblGanan = new System.Windows.Forms.Label();
-            this.lblTota = new System.Windows.Forms.Label();
-            this.lblCompra = new System.Windows.Forms.Label();
-            this.lblGastoOpe = new System.Windows.Forms.Label();
-            this.lblinicial = new System.Windows.Forms.Label();
             this.btnCerrar = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.lblGanan = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.lblTota = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.lblCompra = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.lblGastoOpe = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.lblAnula_Compras = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.lblAnulacion = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.lblVentaF = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.lblVentaT = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.cerrar = new System.Windows.Forms.PictureBox();
+            this.lblinicial = new System.Windows.Forms.Label();
             this.panelTitulo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cerrar)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cerrar)).BeginInit();
             this.SuspendLayout();
             // 
             // panelTitulo
@@ -70,6 +70,20 @@
             this.panelTitulo.Size = new System.Drawing.Size(423, 43);
             this.panelTitulo.TabIndex = 2;
             this.panelTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitulo_MouseDown);
+            // 
+            // cerrar
+            // 
+            this.cerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cerrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cerrar.Image = ((System.Drawing.Image)(resources.GetObject("cerrar.Image")));
+            this.cerrar.Location = new System.Drawing.Point(378, 5);
+            this.cerrar.Margin = new System.Windows.Forms.Padding(4);
+            this.cerrar.Name = "cerrar";
+            this.cerrar.Size = new System.Drawing.Size(32, 32);
+            this.cerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.cerrar.TabIndex = 2;
+            this.cerrar.TabStop = false;
+            this.cerrar.Click += new System.EventHandler(this.cerrar_Click);
             // 
             // lblEncanezado
             // 
@@ -129,114 +143,6 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(423, 438);
             this.tableLayoutPanel1.TabIndex = 3;
             // 
-            // lblAnula_Compras
-            // 
-            this.lblAnula_Compras.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblAnula_Compras.AutoSize = true;
-            this.lblAnula_Compras.Location = new System.Drawing.Point(256, 180);
-            this.lblAnula_Compras.Name = "lblAnula_Compras";
-            this.lblAnula_Compras.Size = new System.Drawing.Size(51, 40);
-            this.lblAnula_Compras.TabIndex = 20;
-            this.lblAnula_Compras.Text = "label8";
-            this.lblAnula_Compras.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lblVentaT
-            // 
-            this.lblVentaT.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblVentaT.AutoSize = true;
-            this.lblVentaT.Location = new System.Drawing.Point(256, 60);
-            this.lblVentaT.Name = "lblVentaT";
-            this.lblVentaT.Size = new System.Drawing.Size(51, 40);
-            this.lblVentaT.TabIndex = 12;
-            this.lblVentaT.Text = "label8";
-            this.lblVentaT.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lblVentaF
-            // 
-            this.lblVentaF.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblVentaF.AutoSize = true;
-            this.lblVentaF.Location = new System.Drawing.Point(256, 100);
-            this.lblVentaF.Name = "lblVentaF";
-            this.lblVentaF.Size = new System.Drawing.Size(51, 40);
-            this.lblVentaF.TabIndex = 13;
-            this.lblVentaF.Text = "label8";
-            this.lblVentaF.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lblAnulacion
-            // 
-            this.lblAnulacion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblAnulacion.AutoSize = true;
-            this.lblAnulacion.Location = new System.Drawing.Point(256, 140);
-            this.lblAnulacion.Name = "lblAnulacion";
-            this.lblAnulacion.Size = new System.Drawing.Size(51, 40);
-            this.lblAnulacion.TabIndex = 14;
-            this.lblAnulacion.Text = "label8";
-            this.lblAnulacion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lblGanan
-            // 
-            this.lblGanan.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblGanan.AutoSize = true;
-            this.lblGanan.Location = new System.Drawing.Point(256, 340);
-            this.lblGanan.Name = "lblGanan";
-            this.lblGanan.Size = new System.Drawing.Size(51, 34);
-            this.lblGanan.TabIndex = 18;
-            this.lblGanan.Text = "label8";
-            this.lblGanan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lblTota
-            // 
-            this.lblTota.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblTota.AutoSize = true;
-            this.lblTota.Location = new System.Drawing.Point(256, 300);
-            this.lblTota.Name = "lblTota";
-            this.lblTota.Size = new System.Drawing.Size(51, 40);
-            this.lblTota.TabIndex = 17;
-            this.lblTota.Text = "label8";
-            this.lblTota.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lblCompra
-            // 
-            this.lblCompra.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblCompra.AutoSize = true;
-            this.lblCompra.Location = new System.Drawing.Point(256, 260);
-            this.lblCompra.Name = "lblCompra";
-            this.lblCompra.Size = new System.Drawing.Size(51, 40);
-            this.lblCompra.TabIndex = 16;
-            this.lblCompra.Text = "label8";
-            this.lblCompra.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lblGastoOpe
-            // 
-            this.lblGastoOpe.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblGastoOpe.AutoSize = true;
-            this.lblGastoOpe.Location = new System.Drawing.Point(256, 220);
-            this.lblGastoOpe.Name = "lblGastoOpe";
-            this.lblGastoOpe.Size = new System.Drawing.Size(51, 40);
-            this.lblGastoOpe.TabIndex = 15;
-            this.lblGastoOpe.Text = "label8";
-            this.lblGastoOpe.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lblinicial
-            // 
-            this.lblinicial.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblinicial.AutoSize = true;
-            this.lblinicial.Location = new System.Drawing.Point(256, 20);
-            this.lblinicial.Name = "lblinicial";
-            this.lblinicial.Size = new System.Drawing.Size(51, 40);
-            this.lblinicial.TabIndex = 23;
-            this.lblinicial.Text = "label8";
-            this.lblinicial.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // btnCerrar
             // 
             this.btnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -263,6 +169,18 @@
             this.label7.Text = "Ganancias:";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // lblGanan
+            // 
+            this.lblGanan.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblGanan.AutoSize = true;
+            this.lblGanan.Location = new System.Drawing.Point(256, 340);
+            this.lblGanan.Name = "lblGanan";
+            this.lblGanan.Size = new System.Drawing.Size(51, 34);
+            this.lblGanan.TabIndex = 18;
+            this.lblGanan.Text = "label8";
+            this.lblGanan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // label6
             // 
             this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -275,6 +193,18 @@
             this.label6.TabIndex = 6;
             this.label6.Text = "Total:";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblTota
+            // 
+            this.lblTota.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblTota.AutoSize = true;
+            this.lblTota.Location = new System.Drawing.Point(256, 300);
+            this.lblTota.Name = "lblTota";
+            this.lblTota.Size = new System.Drawing.Size(51, 40);
+            this.lblTota.TabIndex = 17;
+            this.lblTota.Text = "label8";
+            this.lblTota.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label5
             // 
@@ -289,6 +219,18 @@
             this.label5.Text = "Total compras:";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // lblCompra
+            // 
+            this.lblCompra.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblCompra.AutoSize = true;
+            this.lblCompra.Location = new System.Drawing.Point(256, 260);
+            this.lblCompra.Name = "lblCompra";
+            this.lblCompra.Size = new System.Drawing.Size(51, 40);
+            this.lblCompra.TabIndex = 16;
+            this.lblCompra.Text = "label8";
+            this.lblCompra.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // label4
             // 
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -301,6 +243,18 @@
             this.label4.TabIndex = 4;
             this.label4.Text = "Gastos operativos:";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblGastoOpe
+            // 
+            this.lblGastoOpe.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblGastoOpe.AutoSize = true;
+            this.lblGastoOpe.Location = new System.Drawing.Point(256, 220);
+            this.lblGastoOpe.Name = "lblGastoOpe";
+            this.lblGastoOpe.Size = new System.Drawing.Size(51, 40);
+            this.lblGastoOpe.TabIndex = 15;
+            this.lblGastoOpe.Text = "label8";
+            this.lblGastoOpe.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label8
             // 
@@ -315,6 +269,18 @@
             this.label8.Text = "Anulaciones compras:";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // lblAnula_Compras
+            // 
+            this.lblAnula_Compras.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblAnula_Compras.AutoSize = true;
+            this.lblAnula_Compras.Location = new System.Drawing.Point(256, 180);
+            this.lblAnula_Compras.Name = "lblAnula_Compras";
+            this.lblAnula_Compras.Size = new System.Drawing.Size(51, 40);
+            this.lblAnula_Compras.TabIndex = 20;
+            this.lblAnula_Compras.Text = "label8";
+            this.lblAnula_Compras.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // label3
             // 
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -327,6 +293,18 @@
             this.label3.TabIndex = 3;
             this.label3.Text = "Anulaciones ventas:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblAnulacion
+            // 
+            this.lblAnulacion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblAnulacion.AutoSize = true;
+            this.lblAnulacion.Location = new System.Drawing.Point(256, 140);
+            this.lblAnulacion.Name = "lblAnulacion";
+            this.lblAnulacion.Size = new System.Drawing.Size(51, 40);
+            this.lblAnulacion.TabIndex = 14;
+            this.lblAnulacion.Text = "label8";
+            this.lblAnulacion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label2
             // 
@@ -341,6 +319,18 @@
             this.label2.Text = "Ventas en facturas:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // lblVentaF
+            // 
+            this.lblVentaF.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblVentaF.AutoSize = true;
+            this.lblVentaF.Location = new System.Drawing.Point(256, 100);
+            this.lblVentaF.Name = "lblVentaF";
+            this.lblVentaF.Size = new System.Drawing.Size(51, 40);
+            this.lblVentaF.TabIndex = 13;
+            this.lblVentaF.Text = "label8";
+            this.lblVentaF.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // label1
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -353,6 +343,18 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Ventas en tickets:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblVentaT
+            // 
+            this.lblVentaT.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblVentaT.AutoSize = true;
+            this.lblVentaT.Location = new System.Drawing.Point(256, 60);
+            this.lblVentaT.Name = "lblVentaT";
+            this.lblVentaT.Size = new System.Drawing.Size(51, 40);
+            this.lblVentaT.TabIndex = 12;
+            this.lblVentaT.Text = "label8";
+            this.lblVentaT.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label9
             // 
@@ -367,19 +369,17 @@
             this.label9.Text = "Efectivo inicial:";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // cerrar
+            // lblinicial
             // 
-            this.cerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cerrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cerrar.Image = ((System.Drawing.Image)(resources.GetObject("cerrar.Image")));
-            this.cerrar.Location = new System.Drawing.Point(378, 5);
-            this.cerrar.Margin = new System.Windows.Forms.Padding(4);
-            this.cerrar.Name = "cerrar";
-            this.cerrar.Size = new System.Drawing.Size(32, 32);
-            this.cerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.cerrar.TabIndex = 2;
-            this.cerrar.TabStop = false;
-            this.cerrar.Click += new System.EventHandler(this.cerrar_Click);
+            this.lblinicial.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblinicial.AutoSize = true;
+            this.lblinicial.Location = new System.Drawing.Point(256, 20);
+            this.lblinicial.Name = "lblinicial";
+            this.lblinicial.Size = new System.Drawing.Size(51, 40);
+            this.lblinicial.TabIndex = 23;
+            this.lblinicial.Text = "label8";
+            this.lblinicial.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // revisar_caja
             // 
@@ -398,10 +398,10 @@
             this.Load += new System.EventHandler(this.revisar_caja_Load);
             this.panelTitulo.ResumeLayout(false);
             this.panelTitulo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cerrar)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cerrar)).EndInit();
             this.ResumeLayout(false);
 
         }
