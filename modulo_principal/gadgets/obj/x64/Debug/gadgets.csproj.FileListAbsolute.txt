@@ -7,3 +7,9 @@ E:\Escritorio\Proyecto_gerardo\modulo_principal\gadgets\bin\x64\Debug\gadgets.pd
 E:\Escritorio\Proyecto_gerardo\modulo_principal\gadgets\obj\x64\Debug\gadgets.csprojResolveAssemblyReference.cache
 E:\Escritorio\Proyecto_gerardo\modulo_principal\gadgets\obj\x64\Debug\gadgets.dll
 E:\Escritorio\Proyecto_gerardo\modulo_principal\gadgets\obj\x64\Debug\gadgets.pdb
+H:\proyecto_tienda\tienda_jose_gerardo\modulo_principal\gadgets\bin\x64\Debug\gadgets.dll
+H:\proyecto_tienda\tienda_jose_gerardo\modulo_principal\gadgets\bin\x64\Debug\gadgets.pdb
+H:\proyecto_tienda\tienda_jose_gerardo\modulo_principal\gadgets\obj\x64\Debug\gadgets.csprojAssemblyReference.cache
+H:\proyecto_tienda\tienda_jose_gerardo\modulo_principal\gadgets\obj\x64\Debug\gadgets.csproj.CoreCompileInputs.cache
+H:\proyecto_tienda\tienda_jose_gerardo\modulo_principal\gadgets\obj\x64\Debug\gadgets.dll
+H:\proyecto_tienda\tienda_jose_gerardo\modulo_principal\gadgets\obj\x64\Debug\gadgets.pdb

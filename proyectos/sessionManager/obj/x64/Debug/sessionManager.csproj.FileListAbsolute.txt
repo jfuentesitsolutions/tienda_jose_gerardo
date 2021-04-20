@@ -7,3 +7,8 @@ E:\Escritorio\Proyecto_gerardo\proyectos\sessionManager\bin\x64\Debug\sessionMan
 E:\Escritorio\Proyecto_gerardo\proyectos\sessionManager\obj\x64\Debug\sessionManager.csprojResolveAssemblyReference.cache
 E:\Escritorio\Proyecto_gerardo\proyectos\sessionManager\obj\x64\Debug\sessionManager.dll
 E:\Escritorio\Proyecto_gerardo\proyectos\sessionManager\obj\x64\Debug\sessionManager.pdb
+H:\proyecto_tienda\tienda_jose_gerardo\proyectos\sessionManager\bin\x64\Debug\sessionManager.dll
+H:\proyecto_tienda\tienda_jose_gerardo\proyectos\sessionManager\bin\x64\Debug\sessionManager.pdb
+H:\proyecto_tienda\tienda_jose_gerardo\proyectos\sessionManager\obj\x64\Debug\sessionManager.csproj.CoreCompileInputs.cache
+H:\proyecto_tienda\tienda_jose_gerardo\proyectos\sessionManager\obj\x64\Debug\sessionManager.dll
+H:\proyecto_tienda\tienda_jose_gerardo\proyectos\sessionManager\obj\x64\Debug\sessionManager.pdb

@@ -15,7 +15,6 @@ namespace interfaces.paneles
     {
         sessionManager.secion sesion = sessionManager.secion.Instancia;
         bool conexion_remota = false;
-        conexiones_BD.Conexion con;
         public negocio()
         {
             InitializeComponent();

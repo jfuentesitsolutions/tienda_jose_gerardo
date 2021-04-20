@@ -24,7 +24,7 @@ namespace interfaces.compras
         int tipo_factura = 0;
         Dictionary<string, List<presentaciones_productos>> datos_presentaciones = null;
         List<conexiones_BD.clases.presentaciones_productos> prese = null;
-        string total_neto, sub_total, iva_, descuento_;
+        string total_neto, sub_total, iva_;
         public compras_de_productos()
         {
             InitializeComponent();
