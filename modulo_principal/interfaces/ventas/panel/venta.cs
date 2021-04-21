@@ -837,13 +837,19 @@ namespace interfaces.ventas.panel
             
             foreach (DataGridViewRow fila in tabla_articulos.Rows)
             {
-                    double cantidad = Convert.ToDouble(fila.Cells[4].Value.ToString()) * Convert.ToDouble(fila.Cells[10].Value.ToString());
+                    double cantidad = Convert.ToDouble(fila.Cells[10].Value.ToString());
                     double can = Convert.ToDouble(fila.Cells[4].Value.ToString());
                     dp.Add(new conexiones_BD.clases.ventas.detalles_productos_venta_ticket(
-                        "0", fila.Cells[7].Value.ToString(), can.ToString(),
-                        fila.Cells[5].Value.ToString(), fila.Cells[6].Value.ToString(),
-                        fila.Cells[8].Value.ToString(), "0", fila.Cells[12].Value.ToString(),
-                        cantidad.ToString(), fila.Cells[1].Value.ToString()));
+                        "0", 
+                        fila.Cells[7].Value.ToString(), 
+                        can.ToString(),
+                        fila.Cells[5].Value.ToString(), 
+                        fila.Cells[6].Value.ToString(),
+                        fila.Cells[8].Value.ToString(), 
+                        "0", 
+                        fila.Cells[12].Value.ToString(),
+                        cantidad.ToString(), 
+                        fila.Cells[1].Value.ToString()));
             }
 
 
