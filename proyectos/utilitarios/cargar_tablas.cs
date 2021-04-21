@@ -132,8 +132,6 @@ namespace utilitarios
             }
             tabla.AutoGenerateColumns = false;
             tabla.DataSource = ContenidoTabla;
-
-           
         }
 
         public void cargar()

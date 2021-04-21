@@ -31,10 +31,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(tipos_marcas));
             this.txtBusqueda = new System.Windows.Forms.TextBox();
             this.tabla_marcas = new System.Windows.Forms.DataGridView();
+            this.tb_cate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelTitulo = new System.Windows.Forms.Panel();
             this.cerrar = new System.Windows.Forms.PictureBox();
             this.lblEncanezado = new System.Windows.Forms.Label();
-            this.tb_cate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.tabla_marcas)).BeginInit();
             this.panelTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cerrar)).BeginInit();
@@ -47,6 +47,7 @@
             this.txtBusqueda.Name = "txtBusqueda";
             this.txtBusqueda.Size = new System.Drawing.Size(278, 26);
             this.txtBusqueda.TabIndex = 16;
+            this.txtBusqueda.TextChanged += new System.EventHandler(this.txtBusqueda_TextChanged);
             // 
             // tabla_marcas
             // 
@@ -65,6 +66,15 @@
             this.tabla_marcas.RowHeadersVisible = false;
             this.tabla_marcas.Size = new System.Drawing.Size(278, 246);
             this.tabla_marcas.TabIndex = 15;
+            this.tabla_marcas.Click += new System.EventHandler(this.tabla_marcas_Click);
+            // 
+            // tb_cate
+            // 
+            this.tb_cate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.tb_cate.DataPropertyName = "nombre";
+            this.tb_cate.HeaderText = "MARCAS";
+            this.tb_cate.Name = "tb_cate";
+            this.tb_cate.ReadOnly = true;
             // 
             // panelTitulo
             // 
@@ -102,14 +112,6 @@
             this.lblEncanezado.TabIndex = 0;
             this.lblEncanezado.Text = "Selecciona una marca";
             // 
-            // tb_cate
-            // 
-            this.tb_cate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.tb_cate.DataPropertyName = "nombre";
-            this.tb_cate.HeaderText = "MARCAS";
-            this.tb_cate.Name = "tb_cate";
-            this.tb_cate.ReadOnly = true;
-            // 
             // tipos_marcas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -120,10 +122,11 @@
             this.Controls.Add(this.panelTitulo);
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "tipos_marcas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "tipos_marcas";
+            this.Load += new System.EventHandler(this.tipos_marcas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tabla_marcas)).EndInit();
             this.panelTitulo.ResumeLayout(false);
             this.panelTitulo.PerformLayout();

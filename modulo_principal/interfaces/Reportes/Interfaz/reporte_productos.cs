@@ -90,6 +90,12 @@ namespace interfaces.Reportes.Interfaz
                         }
                     case 3:
                         {
+                            auxiliares.tipos_marcas marc = new auxiliares.tipos_marcas();
+                            marc.ShowDialog();
+                            if (!marc.Cancelado)
+                            {
+                                busqueda_categoria(marc.Nombre_marca, marc.Reporte_sencillo, "marca");
+                            }
                             break;
                         }
                 }
@@ -110,6 +116,7 @@ namespace interfaces.Reportes.Interfaz
                 IEnumerable<DataRow> largeProducts =
     productsQuery.Where(p => p.Field<string>(campo) == nombre);
 
+
             if (datos.Tables.Count == 3)
             {
                 datos.Tables.Add(largeProducts.CopyToDataTable<DataRow>());
@@ -118,9 +125,7 @@ namespace interfaces.Reportes.Interfaz
             {
                 datos.Tables.RemoveAt(3);
                 datos.Tables.Add(largeProducts.CopyToDataTable<DataRow>());
-            }
-            
-
+            } 
 
             if (sencillo)
             {
@@ -139,9 +144,92 @@ namespace interfaces.Reportes.Interfaz
                 repo.Subreports[0].Database.Tables["codigos_producto"].SetDataSource(datos.Tables[1]);
                 repo.Subreports[1].Database.Tables["reporte_presentaciones"].SetDataSource(datos.Tables[2]);
                 reporte.ReportSource = repo;
+            }  
+        }
+
+        private void busqueda_nombre(string nombre, bool sencillo, string campo)
+        {
+            DataTable prueba = datos.Tables[0];
+            IEnumerable<DataRow> productsQuery =
+from product in prueba.AsEnumerable()
+select product;
+
+            IEnumerable<DataRow> largeProducts =
+productsQuery.Where(p => p.Field<string>(campo).Contains(nombre.ToUpper()));
+
+            Console.WriteLine("Conteo de productos: "+largeProducts.Count());
+
+            if (datos.Tables.Count == 3)
+            {
+                try
+                {
+                    datos.Tables.Add(largeProducts.CopyToDataTable<DataRow>());
+                    generar_reporte(sencillo);
+                }
+                catch(Exception e)
+                {
+                    if(e.HResult == -2146233079)
+                    {
+                        MessageBox.Show("No se encontrarón productos con ese nombre", "No hay coincidencias", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    
+                }   
             }
+            else
+            {
+                try
+                {
+                datos.Tables.RemoveAt(3);
+                datos.Tables.Add(largeProducts.CopyToDataTable<DataRow>());
+                    generar_reporte(sencillo);
+                }catch(Exception e){
+                    if (e.HResult == -2146233079)
+                    {
+                        MessageBox.Show("No se encontrarón productos con ese nombre", "No hay coincidencias", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
                 
-                
+            }
+        }
+
+        private void generar_reporte(bool tipo)
+        {
+            if (tipo)
+            {
+                Diseño.reporte_sencillo_productos repo = new Diseño.reporte_sencillo_productos();
+                repo.SetDataSource(datos);
+                repo.Database.Tables["reporte_inventario_productos"].SetDataSource(datos.Tables[3]);
+                repo.Subreports[0].Database.Tables["reporte_presentaciones"].SetDataSource(datos.Tables[2]);
+
+                reporte.ReportSource = repo;
+            }
+            else
+            {
+                Diseño.productos_inventario repo = new Diseño.productos_inventario();
+                repo.SetDataSource(datos);
+                repo.Database.Tables["reporte_inventario_productos"].SetDataSource(datos.Tables[3]);
+                repo.Subreports[0].Database.Tables["codigos_producto"].SetDataSource(datos.Tables[1]);
+                repo.Subreports[1].Database.Tables["reporte_presentaciones"].SetDataSource(datos.Tables[2]);
+                reporte.ReportSource = repo;
+            }
+        }
+        private void btnCampoBuscar_Click(object sender, EventArgs e)
+        {
+            if (txtCampoBuscar.TextLength != 0)
+            {
+                if (MessageBox.Show("¿Deseas imprimir un reporte sencillo?", "Tipo de reporte", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    busqueda_nombre(txtCampoBuscar.Text, true, "nom_producto");
+                }
+                else
+                {
+                    busqueda_nombre(txtCampoBuscar.Text, false, "nom_producto");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Escribe el nombre del producto a consultar", "No hay criterio de busqueda", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void reporte_productos_Load(object sender, EventArgs e)
