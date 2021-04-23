@@ -98,11 +98,7 @@ namespace interfaces.Reportes.Interfaz
                             }
                             break;
                         }
-                }
-                    
-                
-
-                
+                } 
             }
         }
 
