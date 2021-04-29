@@ -32,7 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(venta));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -40,6 +39,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelInferio = new System.Windows.Forms.Panel();
             this.tabla_clientes = new System.Windows.Forms.DataGridView();
             this.nom = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -74,21 +74,23 @@
             this.chkCod = new System.Windows.Forms.RadioButton();
             this.panel3 = new System.Windows.Forms.Panel();
             this.tablad = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabla_articulos = new System.Windows.Forms.DataGridView();
+            this.correlativo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.prese = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.canti = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.preci = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idsuc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipo_uti = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.error = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -114,22 +116,21 @@
             this.lblrelog = new System.Windows.Forms.ToolStripLabel();
             this.progreso = new System.Windows.Forms.ToolStripProgressBar();
             this.relog = new System.Windows.Forms.Timer(this.components);
-            this.correlativo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.prese = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.canti = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.preci = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idsuc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tipo_uti = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tp = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelInferio.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabla_clientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnActualizarInformación)).BeginInit();
@@ -555,7 +556,8 @@
             this.Column19,
             this.Column20,
             this.Column23,
-            this.Column22});
+            this.Column22,
+            this.tp});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -577,119 +579,6 @@
             this.tablad.Visible = false;
             this.tablad.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tablad_KeyDown);
             this.tablad.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tablad_KeyUp);
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "idsp";
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            this.Column1.DefaultCellStyle = dataGridViewCellStyle1;
-            this.Column1.HeaderText = "idsp";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Visible = false;
-            // 
-            // Column5
-            // 
-            this.Column5.DataPropertyName = "codigo";
-            this.Column5.HeaderText = "Codi";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            this.Column5.Width = 200;
-            // 
-            // Column6
-            // 
-            this.Column6.DataPropertyName = "nombre";
-            this.Column6.HeaderText = "Nombre";
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            this.Column6.Width = 500;
-            // 
-            // Column12
-            // 
-            this.Column12.DataPropertyName = "cantipre";
-            this.Column12.HeaderText = "N° p";
-            this.Column12.Name = "Column12";
-            this.Column12.ReadOnly = true;
-            this.Column12.Visible = false;
-            this.Column12.Width = 50;
-            // 
-            // Column13
-            // 
-            this.Column13.DataPropertyName = "productoCod";
-            this.Column13.HeaderText = "proc";
-            this.Column13.Name = "Column13";
-            this.Column13.ReadOnly = true;
-            this.Column13.Visible = false;
-            // 
-            // Column14
-            // 
-            this.Column14.DataPropertyName = "precio";
-            this.Column14.HeaderText = "Precio";
-            this.Column14.Name = "Column14";
-            this.Column14.ReadOnly = true;
-            this.Column14.Visible = false;
-            // 
-            // Column15
-            // 
-            this.Column15.DataPropertyName = "existencias";
-            this.Column15.HeaderText = "Exist";
-            this.Column15.Name = "Column15";
-            this.Column15.ReadOnly = true;
-            // 
-            // Column16
-            // 
-            this.Column16.DataPropertyName = "prese";
-            this.Column16.HeaderText = "prese";
-            this.Column16.Name = "Column16";
-            this.Column16.ReadOnly = true;
-            this.Column16.Visible = false;
-            // 
-            // Column17
-            // 
-            this.Column17.DataPropertyName = "prepro";
-            this.Column17.HeaderText = "prep";
-            this.Column17.Name = "Column17";
-            this.Column17.ReadOnly = true;
-            this.Column17.Visible = false;
-            // 
-            // Column18
-            // 
-            this.Column18.DataPropertyName = "ud";
-            this.Column18.HeaderText = "u";
-            this.Column18.Name = "Column18";
-            this.Column18.ReadOnly = true;
-            this.Column18.Visible = false;
-            // 
-            // Column19
-            // 
-            this.Column19.DataPropertyName = "um";
-            this.Column19.HeaderText = "m";
-            this.Column19.Name = "Column19";
-            this.Column19.ReadOnly = true;
-            this.Column19.Visible = false;
-            // 
-            // Column20
-            // 
-            this.Column20.DataPropertyName = "tipo";
-            this.Column20.HeaderText = "tp";
-            this.Column20.Name = "Column20";
-            this.Column20.ReadOnly = true;
-            this.Column20.Visible = false;
-            // 
-            // Column23
-            // 
-            this.Column23.DataPropertyName = "pre";
-            this.Column23.HeaderText = "Precio";
-            this.Column23.Name = "Column23";
-            this.Column23.ReadOnly = true;
-            // 
-            // Column22
-            // 
-            this.Column22.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column22.DataPropertyName = "cantipre";
-            this.Column22.HeaderText = "N° ";
-            this.Column22.Name = "Column22";
-            this.Column22.ReadOnly = true;
             // 
             // tabla_articulos
             // 
@@ -725,6 +614,127 @@
             this.tabla_articulos.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.tabla_articulos_CellEndEdit);
             this.tabla_articulos.Click += new System.EventHandler(this.tabla_articulos_Click);
             this.tabla_articulos.DoubleClick += new System.EventHandler(this.tabla_articulos_DoubleClick);
+            // 
+            // correlativo
+            // 
+            this.correlativo.DataPropertyName = "rownum";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.correlativo.DefaultCellStyle = dataGridViewCellStyle4;
+            this.correlativo.HeaderText = "N°";
+            this.correlativo.Name = "correlativo";
+            this.correlativo.ReadOnly = true;
+            this.correlativo.Width = 45;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "cod_producto";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Column2.DefaultCellStyle = dataGridViewCellStyle5;
+            this.Column2.HeaderText = "CODIGO";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Width = 200;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "nom_producto";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Column3.DefaultCellStyle = dataGridViewCellStyle6;
+            this.Column3.HeaderText = "DESCRIPCIÓN";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Width = 350;
+            // 
+            // prese
+            // 
+            this.prese.DataPropertyName = "nombre_presentacion";
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.prese.DefaultCellStyle = dataGridViewCellStyle7;
+            this.prese.HeaderText = "PRESENTACIÓN";
+            this.prese.Name = "prese";
+            this.prese.ReadOnly = true;
+            this.prese.Width = 200;
+            // 
+            // canti
+            // 
+            this.canti.DataPropertyName = "cantidad_paquete";
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.canti.DefaultCellStyle = dataGridViewCellStyle8;
+            this.canti.HeaderText = "CANTIDAD";
+            this.canti.Name = "canti";
+            // 
+            // preci
+            // 
+            this.preci.DataPropertyName = "precio";
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.preci.DefaultCellStyle = dataGridViewCellStyle9;
+            this.preci.HeaderText = "PRECIO";
+            this.preci.Name = "preci";
+            this.preci.Width = 70;
+            // 
+            // Column7
+            // 
+            this.Column7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column7.DataPropertyName = "total";
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Column7.DefaultCellStyle = dataGridViewCellStyle10;
+            this.Column7.HeaderText = "TOTAL";
+            this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
+            // 
+            // Column8
+            // 
+            this.Column8.HeaderText = "idpresentacion_producto";
+            this.Column8.Name = "Column8";
+            this.Column8.Visible = false;
+            // 
+            // Column9
+            // 
+            this.Column9.HeaderText = "utilidad";
+            this.Column9.Name = "Column9";
+            this.Column9.Visible = false;
+            // 
+            // Column10
+            // 
+            this.Column10.HeaderText = "idventa";
+            this.Column10.Name = "Column10";
+            this.Column10.Visible = false;
+            // 
+            // cantidad
+            // 
+            this.cantidad.HeaderText = "cantidad_interna";
+            this.cantidad.Name = "cantidad";
+            this.cantidad.Visible = false;
+            // 
+            // Column11
+            // 
+            this.Column11.HeaderText = "existencias";
+            this.Column11.Name = "Column11";
+            this.Column11.Visible = false;
+            // 
+            // idsuc
+            // 
+            this.idsuc.HeaderText = "idsucursal_producto";
+            this.idsuc.Name = "idsuc";
+            this.idsuc.Visible = false;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "idutilidadD";
+            this.Column4.Name = "Column4";
+            this.Column4.Visible = false;
+            // 
+            // Column21
+            // 
+            this.Column21.HeaderText = "idutilidadM";
+            this.Column21.Name = "Column21";
+            this.Column21.Visible = false;
+            // 
+            // tipo_uti
+            // 
+            this.tipo_uti.HeaderText = "tipo_utili";
+            this.tipo_uti.Name = "tipo_uti";
+            this.tipo_uti.Visible = false;
             // 
             // error
             // 
@@ -1006,126 +1016,126 @@
             this.relog.Interval = 1000;
             this.relog.Tick += new System.EventHandler(this.relog_Tick);
             // 
-            // correlativo
+            // Column1
             // 
-            this.correlativo.DataPropertyName = "rownum";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.correlativo.DefaultCellStyle = dataGridViewCellStyle4;
-            this.correlativo.HeaderText = "N°";
-            this.correlativo.Name = "correlativo";
-            this.correlativo.ReadOnly = true;
-            this.correlativo.Width = 45;
+            this.Column1.DataPropertyName = "idsp";
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle1;
+            this.Column1.HeaderText = "idsp";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Visible = false;
             // 
-            // Column2
+            // Column5
             // 
-            this.Column2.DataPropertyName = "cod_producto";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Column2.DefaultCellStyle = dataGridViewCellStyle5;
-            this.Column2.HeaderText = "CODIGO";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Width = 200;
+            this.Column5.DataPropertyName = "codigo";
+            this.Column5.HeaderText = "Codi";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            this.Column5.Width = 200;
             // 
-            // Column3
+            // Column6
             // 
-            this.Column3.DataPropertyName = "nom_producto";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Column3.DefaultCellStyle = dataGridViewCellStyle6;
-            this.Column3.HeaderText = "DESCRIPCIÓN";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            this.Column3.Width = 350;
+            this.Column6.DataPropertyName = "nombre";
+            this.Column6.HeaderText = "Nombre";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            this.Column6.Width = 500;
             // 
-            // prese
+            // Column12
             // 
-            this.prese.DataPropertyName = "nombre_presentacion";
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.prese.DefaultCellStyle = dataGridViewCellStyle7;
-            this.prese.HeaderText = "PRESENTACIÓN";
-            this.prese.Name = "prese";
-            this.prese.ReadOnly = true;
-            this.prese.Width = 200;
+            this.Column12.DataPropertyName = "cantipre";
+            this.Column12.HeaderText = "N° p";
+            this.Column12.Name = "Column12";
+            this.Column12.ReadOnly = true;
+            this.Column12.Visible = false;
+            this.Column12.Width = 50;
             // 
-            // canti
+            // Column13
             // 
-            this.canti.DataPropertyName = "cantidad_paquete";
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.canti.DefaultCellStyle = dataGridViewCellStyle8;
-            this.canti.HeaderText = "CANTIDAD";
-            this.canti.Name = "canti";
+            this.Column13.DataPropertyName = "productoCod";
+            this.Column13.HeaderText = "proc";
+            this.Column13.Name = "Column13";
+            this.Column13.ReadOnly = true;
+            this.Column13.Visible = false;
             // 
-            // preci
+            // Column14
             // 
-            this.preci.DataPropertyName = "precio";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.preci.DefaultCellStyle = dataGridViewCellStyle9;
-            this.preci.HeaderText = "PRECIO";
-            this.preci.Name = "preci";
-            this.preci.Width = 70;
+            this.Column14.DataPropertyName = "precio";
+            this.Column14.HeaderText = "Precio";
+            this.Column14.Name = "Column14";
+            this.Column14.ReadOnly = true;
+            this.Column14.Visible = false;
             // 
-            // Column7
+            // Column15
             // 
-            this.Column7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column7.DataPropertyName = "total";
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Column7.DefaultCellStyle = dataGridViewCellStyle10;
-            this.Column7.HeaderText = "TOTAL";
-            this.Column7.Name = "Column7";
-            this.Column7.ReadOnly = true;
+            this.Column15.DataPropertyName = "existencias";
+            this.Column15.HeaderText = "Exist";
+            this.Column15.Name = "Column15";
+            this.Column15.ReadOnly = true;
             // 
-            // Column8
+            // Column16
             // 
-            this.Column8.HeaderText = "idpresentacion_producto";
-            this.Column8.Name = "Column8";
-            this.Column8.Visible = false;
+            this.Column16.DataPropertyName = "prese";
+            this.Column16.HeaderText = "prese";
+            this.Column16.Name = "Column16";
+            this.Column16.ReadOnly = true;
+            this.Column16.Visible = false;
             // 
-            // Column9
+            // Column17
             // 
-            this.Column9.HeaderText = "utilidad";
-            this.Column9.Name = "Column9";
-            this.Column9.Visible = false;
+            this.Column17.DataPropertyName = "prepro";
+            this.Column17.HeaderText = "prep";
+            this.Column17.Name = "Column17";
+            this.Column17.ReadOnly = true;
+            this.Column17.Visible = false;
             // 
-            // Column10
+            // Column18
             // 
-            this.Column10.HeaderText = "idventa";
-            this.Column10.Name = "Column10";
-            this.Column10.Visible = false;
+            this.Column18.DataPropertyName = "ud";
+            this.Column18.HeaderText = "u";
+            this.Column18.Name = "Column18";
+            this.Column18.ReadOnly = true;
+            this.Column18.Visible = false;
             // 
-            // cantidad
+            // Column19
             // 
-            this.cantidad.HeaderText = "cantidad_interna";
-            this.cantidad.Name = "cantidad";
-            this.cantidad.Visible = false;
+            this.Column19.DataPropertyName = "um";
+            this.Column19.HeaderText = "m";
+            this.Column19.Name = "Column19";
+            this.Column19.ReadOnly = true;
+            this.Column19.Visible = false;
             // 
-            // Column11
+            // Column20
             // 
-            this.Column11.HeaderText = "existencias";
-            this.Column11.Name = "Column11";
-            this.Column11.Visible = false;
+            this.Column20.DataPropertyName = "tipo";
+            this.Column20.HeaderText = "tp";
+            this.Column20.Name = "Column20";
+            this.Column20.ReadOnly = true;
+            this.Column20.Visible = false;
             // 
-            // idsuc
+            // Column23
             // 
-            this.idsuc.HeaderText = "idsucursal_producto";
-            this.idsuc.Name = "idsuc";
-            this.idsuc.Visible = false;
+            this.Column23.DataPropertyName = "pre";
+            this.Column23.HeaderText = "Precio";
+            this.Column23.Name = "Column23";
+            this.Column23.ReadOnly = true;
             // 
-            // Column4
+            // Column22
             // 
-            this.Column4.HeaderText = "idutilidadD";
-            this.Column4.Name = "Column4";
-            this.Column4.Visible = false;
+            this.Column22.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column22.DataPropertyName = "cantipre";
+            this.Column22.HeaderText = "N° ";
+            this.Column22.Name = "Column22";
+            this.Column22.ReadOnly = true;
             // 
-            // Column21
+            // tp
             // 
-            this.Column21.HeaderText = "idutilidadM";
-            this.Column21.Name = "Column21";
-            this.Column21.Visible = false;
-            // 
-            // tipo_uti
-            // 
-            this.tipo_uti.HeaderText = "tipo_utili";
-            this.tipo_uti.Name = "tipo_uti";
-            this.tipo_uti.Visible = false;
+            this.tp.DataPropertyName = "tipo_precio";
+            this.tp.HeaderText = "tipo_pre";
+            this.tp.Name = "tp";
+            this.tp.ReadOnly = true;
+            this.tp.Visible = false;
             // 
             // venta
             // 
@@ -1232,20 +1242,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dire;
         private System.Windows.Forms.DataGridViewTextBoxColumn gene;
         private System.Windows.Forms.PictureBox btnActualizar_Pro;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column12;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column13;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column14;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column15;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column16;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column17;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column18;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column19;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column20;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column23;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column22;
         private System.Windows.Forms.DataGridViewTextBoxColumn correlativo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
@@ -1262,5 +1258,20 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column21;
         private System.Windows.Forms.DataGridViewTextBoxColumn tipo_uti;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column12;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column13;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column14;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column15;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column16;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column17;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column18;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column19;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column20;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column23;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column22;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tp;
     }
 }

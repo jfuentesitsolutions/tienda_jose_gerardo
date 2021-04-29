@@ -71,14 +71,12 @@ namespace interfaces.mantenimientos
             }
             else
             {
-                
                 if (ingreso_nuevo)
                 {
                     this.Width = 633;
                     gadgets.horientaciones_textos.colocarTitulo(panelTitulo, lblEncanezado);
                     this.StartPosition = FormStartPosition.CenterScreen;
                 }
-                
                 cargarTablas();
                 cargarListas();
                 selecD = true;
@@ -177,6 +175,8 @@ namespace interfaces.mantenimientos
                         {
                             priori = "1";
                         }
+
+
                         prpr = new conexiones_BD.clases.presentaciones_productos(
                             idsucusal_producto,
                             pp.Idpresentacion,
@@ -184,7 +184,8 @@ namespace interfaces.mantenimientos
                             Math.Round(pp.precio.Value, 2).ToString(),
                             pp.TipoN,
                             priori,
-                            "1"
+                            "1",
+                            pp.TipoPI
                             );
 
                         if (prpr.guardar(false, false) > 0)
@@ -197,6 +198,7 @@ namespace interfaces.mantenimientos
             }
             else
             {
+                /*Presentaciones que se agregan sin haber agregado el producto*/
                 try
                 {
                     if (!validarAgregarPresentacion())
@@ -211,8 +213,17 @@ namespace interfaces.mantenimientos
                         if (pp.Agregado)
                         {
                             tabla_presentacion_producto.Rows.Add(
-                            "0", pp.Idpresentacion, pp.lblPresenta.Text, Math.Round(pp.precio.Value, 2), pp.Tipo, pp.canti.Value, pp.TipoN
+                            "0", 
+                            pp.Idpresentacion, 
+                            pp.lblPresenta.Text, 
+                            Math.Round(pp.precio.Value, 2), 
+                            pp.Tipo, 
+                            pp.canti.Value, 
+                            pp.TipoN,
+                            pp.TipoPI
                             );
+
+                            revisando_tipo_precio();
                         }
 
                     }
@@ -223,6 +234,7 @@ namespace interfaces.mantenimientos
                 }
             }
         }
+
 
         private bool validarAgregarPresentacion()
         {
@@ -874,7 +886,14 @@ namespace interfaces.mantenimientos
 
             foreach (DataGridViewRow fila in tabla_presentacion_producto.Rows)
             {
-                pp.Add(new conexiones_BD.clases.presentaciones_productos("0", fila.Cells[1].Value.ToString(), fila.Cells[5].Value.ToString(), fila.Cells[3].Value.ToString(), fila.Cells[6].Value.ToString(),"2", "1"));
+                pp.Add(new conexiones_BD.clases.presentaciones_productos("0", 
+                    fila.Cells[1].Value.ToString(), 
+                    fila.Cells[5].Value.ToString(), 
+                    fila.Cells[3].Value.ToString(), 
+                    fila.Cells[6].Value.ToString(),
+                    "2", 
+                    "1",
+                    fila.Cells[7].Value.ToString()));
             }
 
             return pp;
@@ -974,6 +993,20 @@ namespace interfaces.mantenimientos
             if (codi.Listo)
             {
                 this.cargarCodigos();
+            }
+        }
+
+        private void revisando_tipo_precio()
+        {
+            if (tabla_presentacion_producto.RowCount != 0)
+            {
+                foreach(DataGridViewRow fila in tabla_presentacion_producto.Rows)
+                {
+                    if(fila.Cells[7].Value.ToString().Equals("Especial") || fila.Cells[7].Value.ToString().Equals("1"))
+                    {
+                        fila.DefaultCellStyle.BackColor= Color.FromArgb(229, 115, 115);
+                    }
+                }
             }
         }
 
@@ -1184,6 +1217,7 @@ namespace interfaces.mantenimientos
         {
             tabla3 = new utilitarios.cargar_tablas(tabla_presentacion_producto, new TextBox(), conexiones_BD.clases.presentaciones_productos.presentacionesXproducto(idsucusal_producto, false),"nombre_presentacion");
             tabla3.cargarSinContadorRegistros();
+            revisando_tipo_precio();
         }
 
     }

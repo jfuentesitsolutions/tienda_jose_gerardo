@@ -107,6 +107,31 @@ namespace conexiones_BD.clases
             return datos;
         }
 
+        public static bool validacion_precios(String contra)
+        {
+            bool valido = false;
+
+            String consulta = @"select * from usuarios where contrasena=md5('"+contra+"') and idgrupo=1;";
+
+            operaciones bd = new operaciones();
+
+            try
+            {
+                DataTable datos = bd.mostrarTabla(consulta);
+                if (datos.Rows.Count >= 1)
+                {
+                    valido = true;
+                }
+
+            }
+            catch
+            {
+                valido = false;
+            }
+
+            return valido;
+        }
+
         public static DataTable permisosAsigandosConfiguracion(string idgrupo)
         {
             DataTable Datos = new DataTable();

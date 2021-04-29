@@ -18,7 +18,7 @@ namespace interfaces.productos
         utilitarios.cargar_tablas tabla;
         int presenta_anterior, tipo_anterior, cantidad_presentaciones;
         string canti_anterior, precio_anterior, idprepro, precioM, precioD;
-        private bool valores_cargados, prio_anterior, esta_anterior, colocar_anterior = false, compras=false;
+        private bool valores_cargados, prio_anterior, esta_anterior, colocar_anterior, tipo_pre = false, compras=false;
         conexiones_BD.clases.presentaciones_productos pp;
         List<conexiones_BD.clases.presentaciones_productos> prese = null;
         public presentaciones_por_producto()
@@ -170,9 +170,14 @@ namespace interfaces.productos
                     {
                         tipo = 1;
                     }
+
+                    /*Colocando la prioridad si tiene*/
                     int priori = (int)filaa.Cells[9].Value;
                     Console.WriteLine(priori);
+                    /*Colocando el estado si tiene*/
                     string estado = filaa.Cells[10].Value.ToString();
+                    /*Colocando el tipo de precio*/
+                    string tp = filaa.Cells[11].Value.ToString();
 
                     foreach (DataRowView item in ((DataGridViewComboBoxCell)filaa.Cells[2]).Items)
                     {
@@ -199,6 +204,7 @@ namespace interfaces.productos
                         ((DataGridViewCheckBoxCell)filaa.Cells[6]).Value = true;
                     }
 
+                    /*Colocando si es activo*/
                     if (estado.Equals("Activo"))
                     {
                         ((DataGridViewCheckBoxCell)filaa.Cells[7]).Value = true;
@@ -207,6 +213,17 @@ namespace interfaces.productos
                     {
                         ((DataGridViewCheckBoxCell)filaa.Cells[7]).Value = false;
                         filaa.DefaultCellStyle.Font = new Font("Times New Roman", 12, FontStyle.Strikeout);
+                    }
+
+                    /*Colocando el tipo de precio*/
+                    if (tp.Equals("Especial"))
+                    {
+                        ((DataGridViewCheckBoxCell)filaa.Cells[12]).Value = true;
+                        filaa.DefaultCellStyle.BackColor = Color.FromArgb(229, 115, 115);
+                    }
+                    else
+                    {
+                        ((DataGridViewCheckBoxCell)filaa.Cells[12]).Value = false;
                     }
                 }
             }
@@ -259,7 +276,12 @@ namespace interfaces.productos
                         esta_anterior = (bool)cheque.Value;
                         break;
                     }
-                
+                case 12:
+                    {
+                        DataGridViewCheckBoxCell cheque = tabla_presentaciones.Rows[fila].Cells[columna] as DataGridViewCheckBoxCell;
+                        tipo_pre = (bool)cheque.Value;
+                        break;
+                    }  
             }
         }
 
@@ -397,7 +419,16 @@ namespace interfaces.productos
                         }
                         break;
                     }
-                
+                case 12:
+                    {
+                        if (colocar_anterior)
+                        {
+                            ((DataGridViewCheckBoxCell)tabla_presentaciones.Rows[fila].Cells[columna]).Value = tipo_pre;
+                        }
+                        break;
+                    }
+
+
             }
         }
 
@@ -421,6 +452,7 @@ namespace interfaces.productos
                 return;
             }
 
+            /*Guardando prioridad*/
             if (tabla_presentaciones.Columns[e.ColumnIndex].Index == 6)
             {
                 DataGridViewRow row = tabla_presentaciones.Rows[e.RowIndex];
@@ -441,11 +473,13 @@ namespace interfaces.productos
                             if (es.ShowDialog() == DialogResult.OK)
                             {
                                 colocar_anterior = false;
+                                cellSelecion.Value = false;
                             }
                             else
                             {
                                 colocar_anterior = true;
                                 MessageBox.Show("No se pudo cambiar el valor", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                cellSelecion.Value = true;
                             }
                         }
                     }
@@ -453,6 +487,7 @@ namespace interfaces.productos
                     {
                         colocar_anterior = true;
                         tabla_presentaciones.CurrentCell = tabla_presentaciones.Rows[e.RowIndex].Cells[e.ColumnIndex + 1];
+                        cellSelecion.Value = true;
                     }
                 }
                 else
@@ -470,11 +505,13 @@ namespace interfaces.productos
                             if (es.ShowDialog() == DialogResult.OK)
                             {
                                 colocar_anterior = false;
+                                cellSelecion.Value = true;
                             }
                             else
                             {
                                 colocar_anterior = true;
                                 MessageBox.Show("No se pudo cambiar el valor", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                cellSelecion.Value = false;
                             }
                         }
                     }
@@ -482,10 +519,12 @@ namespace interfaces.productos
                     {
                         colocar_anterior = true;
                         tabla_presentaciones.CurrentCell = tabla_presentaciones.Rows[e.RowIndex].Cells[e.ColumnIndex + 1];
+                        cellSelecion.Value = false;
                     }
                 }
             }
 
+            /*Guardando estado*/
             if (tabla_presentaciones.Columns[e.ColumnIndex].Index == 7)
             {
                 DataGridViewRow row = tabla_presentaciones.Rows[e.RowIndex];
@@ -507,11 +546,13 @@ namespace interfaces.productos
                             {
                                 colocar_anterior = false;
                                 row.DefaultCellStyle.Font = new Font("Times New Roman", 12, FontStyle.Strikeout);
+                                cellSelecion.Value = false;
                             }
                             else
                             {
                                 colocar_anterior = true;
                                 MessageBox.Show("No se pudo cambiar el valor", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                cellSelecion.Value = true;
                             }
                         }
                     }
@@ -519,6 +560,7 @@ namespace interfaces.productos
                     {
                         colocar_anterior = true;
                         tabla_presentaciones.CurrentCell = tabla_presentaciones.Rows[e.RowIndex].Cells[e.ColumnIndex - 1];
+                        cellSelecion.Value = true;
                     }
                 }
                 else
@@ -537,11 +579,13 @@ namespace interfaces.productos
                             {
                                 colocar_anterior = false;
                                 row.DefaultCellStyle.Font = new Font("Times New Roman", 12, FontStyle.Regular);
+                                cellSelecion.Value = true;
                             }
                             else
                             {
                                 colocar_anterior = true;
                                 MessageBox.Show("No se pudo cambiar el valor", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                cellSelecion.Value = false;
                             }
                         }
                     }
@@ -549,6 +593,81 @@ namespace interfaces.productos
                     {
                         colocar_anterior = true;
                         tabla_presentaciones.CurrentCell = tabla_presentaciones.Rows[e.RowIndex].Cells[e.ColumnIndex - 1];
+                        cellSelecion.Value = false;
+                    }
+                }
+            }
+
+            /*Guardando tipo_precio*/
+            if (tabla_presentaciones.Columns[e.ColumnIndex].Index == 12)
+            {
+                DataGridViewRow row = tabla_presentaciones.Rows[e.RowIndex];
+                DataGridViewCheckBoxCell cellSelecion = row.Cells[12] as DataGridViewCheckBoxCell;
+
+                if (Convert.ToBoolean(cellSelecion.Value))
+                {
+                    if (MessageBox.Show("¿Deseas desactivar el precio especial?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        pp = new presentaciones_productos();
+                        pp.Idpresentacion_producto = row.Cells[0].Value.ToString();
+                        pp.Preci_estado = "2";
+
+                        using (espera_datos.splash_espera es = new espera_datos.splash_espera())
+                        {
+                            es.Funcion_sentencia = modificando_tipo;
+                            es.Tipo_operacion = 2;
+                            if (es.ShowDialog() == DialogResult.OK)
+                            {
+                                colocar_anterior = false;
+                                row.DefaultCellStyle.BackColor = Color.White;
+                                cellSelecion.Value = false;
+                            }
+                            else
+                            {
+                                colocar_anterior = true;
+                                MessageBox.Show("No se pudo cambiar el valor", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                cellSelecion.Value = true;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        colocar_anterior = true;
+                        tabla_presentaciones.CurrentCell = tabla_presentaciones.Rows[e.RowIndex].Cells[e.ColumnIndex - 5];
+                        cellSelecion.Value = true;
+                    }
+                }
+                else
+                {
+                    if (MessageBox.Show("¿Deseas activar el precio especial?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        pp = new conexiones_BD.clases.presentaciones_productos();
+                        pp.Idpresentacion_producto = row.Cells[0].Value.ToString();
+                        pp.Preci_estado = "1";
+
+                        using (espera_datos.splash_espera es = new espera_datos.splash_espera())
+                        {
+                            es.Funcion_sentencia = modificando_tipo;
+                            es.Tipo_operacion = 2;
+                            if (es.ShowDialog() == DialogResult.OK)
+                            {
+                                colocar_anterior = false;
+                                row.DefaultCellStyle.BackColor = Color.FromArgb(229, 115, 115);
+                                cellSelecion.Value = true;
+                            }
+                            else
+                            {
+                                colocar_anterior = true;
+                                MessageBox.Show("No se pudo cambiar el valor", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                cellSelecion.Value = false;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        colocar_anterior = true;
+                        tabla_presentaciones.CurrentCell = tabla_presentaciones.Rows[e.RowIndex].Cells[e.ColumnIndex - 5];
+                        cellSelecion.Value = false;
                     }
                 }
             }
@@ -601,7 +720,7 @@ namespace interfaces.productos
 
         private DataTable carga_lista_presentaciones()
         {
-            return conexiones_BD.clases.presentaciones.datosTabla(conexion_remota);
+            return presentaciones.datosTabla(conexion_remota);
         }
 
         private void panelTitulo_MouseDown(object sender, MouseEventArgs e)
@@ -677,6 +796,13 @@ namespace interfaces.productos
             conexiones_BD.operaciones op = new conexiones_BD.operaciones();
             op.Conexion_remota = conexion_remota;
             return op.actualizar(pp.modificar_estado());
+        }
+
+        private int modificando_tipo()
+        {
+            conexiones_BD.operaciones op = new conexiones_BD.operaciones();
+            op.Conexion_remota = conexion_remota;
+            return op.actualizar(pp.modificar_tipo_precio());
         }
     }
 }

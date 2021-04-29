@@ -95,11 +95,7 @@ namespace interfaces.ventas.auxiliares
         private List<conexiones_BD.clases.presentaciones_productos> generaPresentaciones()
         {
             List<conexiones_BD.clases.presentaciones_productos> pp = new List<conexiones_BD.clases.presentaciones_productos>();
-
-            
-                pp.Add(new conexiones_BD.clases.presentaciones_productos("0","1","1", precio.Value.ToString(),"2","2","1"));
-            
-
+                pp.Add(new conexiones_BD.clases.presentaciones_productos("0","1","1", precio.Value.ToString(),"2","2","1", "2"));
             return pp;
         }
 

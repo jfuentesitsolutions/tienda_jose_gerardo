@@ -23,7 +23,7 @@ namespace interfaces.ventas.panel
         //DataTable vendedor = conexiones_BD.clases.usuarios.datosTabla();
         utilitarios.cargar_tablas tabla, tablaC;
         string cantiAn, precioAn;
-        bool busqueda = false, busquedaC=false;
+        bool busqueda = false, busquedaC=false, valido=false;
         string idticket_Buscado = null;
         Action accion;
         string correlativoAA, idcorrel;
@@ -693,7 +693,7 @@ namespace interfaces.ventas.panel
             {
                
                     PrintDocument printDoc = new PrintDocument();
-                string impresora = printDoc.PrinterSettings.PrinterName;
+                    string impresora = printDoc.PrinterSettings.PrinterName;
                     
                         conexiones_BD.clases.ventas.impresion_prueba imp = new conexiones_BD.clases.ventas.impresion_prueba();
                         if (imp.impresionTicket(impresora, conexiones_BD.clases.ventas.detalles_productos_venta_ticket.detalle_proTic(correl)))
@@ -708,22 +708,23 @@ namespace interfaces.ventas.panel
                         tabla_clientes.DataSource = null;
                         cargaListas();
 
-                    cargarTablas();
+                        cargarTablas();
 
-                    lista.Clear();
-                    lista_p.ForEach(c => lista.Add(c));
+                        lista.Clear();
+                        lista_p.ForEach(c => lista.Add(c));
                        
                         txtDireccion.Text = lista_p[3];
                         txtBuscarCliente.Text = lista_p[1]+" "+lista_p[2];
 
-                    tabla_clientes.Visible = false;
-                    System.Console.Write(lista[1]);
-                        
+                        tabla_clientes.Visible = false;
+                        System.Console.Write(lista[1]);
 
-                        //if (Gcliente.Height==137)
-                        //{
-                        //    ocultarDetalles();
-                        //}
+
+                    //if (Gcliente.Height==137)
+                    //{
+                    //    ocultarDetalles();
+                    //}
+                    valido = false;
                         
                     }
                     else
@@ -737,6 +738,7 @@ namespace interfaces.ventas.panel
                         txtBusqueda.Focus();
                         tablad.Visible = false;
                         tablad.DataSource = null;
+                        valido = false;
                     }
        
             }
@@ -755,9 +757,9 @@ namespace interfaces.ventas.panel
             Console.WriteLine(fecha_actual.ToString());
 
             conexiones_BD.clases.ventas.tickets ticke = new conexiones_BD.clases.ventas.tickets(
-                "0", "0", fecha.fechaMy(lblrelog.ToString()), sesion.DatosRegistro[1], "1", listaFormaPago.SelectedValue.ToString(),
-                correl, listaVendedor.SelectedValue.ToString(), lblSubt.Text, lblDescuento.Text,
-                this.total, "1", efec, cam, lista[0], idcorre, sesion.Idcaja);
+            "0", "0", fecha.fechaMy(lblrelog.ToString()), sesion.DatosRegistro[1], "1", listaFormaPago.SelectedValue.ToString(),
+            correl, listaVendedor.SelectedValue.ToString(), lblSubt.Text, lblDescuento.Text,
+            this.total, "1", efec, cam, lista[0], idcorre, sesion.Idcaja);
 
             conexiones_BD.operaciones op = new conexiones_BD.operaciones();
             conexiones_BD.clases.ctrl_errores.errores err = op.transaccionVentasTickets(retornoProductos(), ticke);
@@ -767,7 +769,7 @@ namespace interfaces.ventas.panel
             if (res > 0)
             {
 
-                MessageBox.Show("Venta realizada", "Exíto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Venta realizada", "Exíto", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     tabla_articulos.Rows.Clear();
                     calcularTotales();
                     busqueda = false;
@@ -1660,92 +1662,36 @@ namespace interfaces.ventas.panel
 
             //si el articulos solo tiene una presentacion
             if (seleccion.Cells[3].Value.ToString().Equals("1"))
-            {  
-                pu.Idpresentacion_poroducto = seleccion.Cells[8].Value.ToString();
-                if (seleccion.Cells[11].Value.ToString().Equals("Detalle"))
+            {
+                if (seleccion.Cells[14].Value.ToString().Equals("Especial"))
                 {
-                    pu.TipoUtilidad = seleccion.Cells[9].Value.ToString();
-                }
-                else
-                {
-                    pu.TipoUtilidad = seleccion.Cells[10].Value.ToString();
-                }
-
-                pu.Sucursal_producto = seleccion.Cells[0].Value.ToString();
-                pu.Codigo = seleccion.Cells[1].Value.ToString();
-                pu.lblExis.Text = seleccion.Cells[6].Value.ToString();
-                pu.lblNombre.Text = seleccion.Cells[2].Value.ToString();
-                pu.lblPres.Text = seleccion.Cells[7].Value.ToString();
-                pu.lblPrecio.Text = "$" + seleccion.Cells[5].Value.ToString();
-                pu.Precio = seleccion.Cells[5].Value.ToString();
-                pu.txtCantidad.Value = 1;
-                pu.CantidadInter = "1";
-
-                pu.ShowDialog();
-
-                if (pu.Llenado)
-                {
-                    //si la tabla esta vacia
-                    if (tabla_articulos.Rows.Count == 0)
+                    if (sesion.Datos[3].Equals("Administradores") || valido)
                     {
-                        barraDeprogreso(10);
-                        tabla_articulos.Rows.Add(
-                        "",
-                        pu.Codigo,
-                        pu.lblNombre.Text,
-                        pu.lblPres.Text,
-                        pu.txtCantidad.Value.ToString(),
-                        pu.Precio,
-                        pu.Total,
-                        pu.Idpresentacion_poroducto,
-                        pu.Utilidad,
-                        "",
-                        "1",
-                        pu.lblExis.Text,
-                        pu.Sucursal_producto,
-                        pu.TipoUtilidad,
-                        pu.TipoUtilidad,
-                        Convert.ToInt16(pu.Uti_detalle).ToString()
-                        );
-
-                        Console.WriteLine("estes el tipo: "+ Convert.ToInt16(pu.Uti_detalle).ToString());
-                        colocarEnelutimoRegistro();
+                        estableciendo_productos_unicaPre(pu, seleccion, puu);
                     }
                     else
                     {
-                        //si el articulo no esta repetido
-                        if (!productoRepetido(pu.Idpresentacion_poroducto, pu.txtCantidad.Value.ToString()))
+                        auxiliares.validacion_autorizacion valida = new auxiliares.validacion_autorizacion();
+                        valida.ShowDialog();
+                        if (valida.Valido)
                         {
-                            barraDeprogreso(10);
-                            tabla_articulos.Rows.Add(
-                        "",
-                        pu.Codigo,
-                        pu.lblNombre.Text,
-                        pu.lblPres.Text,
-                        pu.txtCantidad.Value.ToString(),
-                        pu.Precio,
-                        pu.Total,
-                        pu.Idpresentacion_poroducto,
-                        pu.Utilidad,
-                        "",
-                        "1",
-                        pu.lblExis.Text,
-                        pu.Sucursal_producto,
-                        pu.TipoUtilidad,
-                        pu.TipoUtilidad,
-                        Convert.ToInt16(puu.Uti_detalle).ToString()
-                        );
-                            colocarEnelutimoRegistro();
-                        } 
+                            estableciendo_productos_unicaPre(pu, seleccion, puu);
+                            valido = true;
+                        }
+                        else
+                        {
+                            this.valido = false;
+                        }
                     }
-
-                    utilitarios.cargar_tablas.correlativoTabla(tabla_articulos);
-                    calcularTotales();
                 }
-                //cuando hay mas de dos presentaciones
+                else
+                {
+                    estableciendo_productos_unicaPre(pu, seleccion, puu);
+                }                  
             }
             else
             {
+                //cuando hay mas de dos presentaciones
                 puu.Sucursal_producto = seleccion.Cells[0].Value.ToString();
                 puu.IdsucursalProducto = seleccion.Cells[0].Value.ToString();
                 puu.Codigo = seleccion.Cells[1].Value.ToString();
@@ -1753,8 +1699,10 @@ namespace interfaces.ventas.panel
                 puu.UtiliadM = seleccion.Cells[10].Value.ToString();
                 puu.lblExis.Text = seleccion.Cells[6].Value.ToString();
                 puu.lblNombre.Text = seleccion.Cells[2].Value.ToString();
+                puu.Valido = this.valido;
 
                 puu.ShowDialog();
+                this.valido = puu.Valido;
 
                 if (puu.Llenado)
                 {
@@ -1818,6 +1766,93 @@ namespace interfaces.ventas.panel
                 utilitarios.cargar_tablas.correlativoTabla(tabla_articulos);
                 calcularTotales();
 
+            }
+        }
+
+        private void estableciendo_productos_unicaPre(auxiliares.producto_unica_presentacion pu, DataGridViewRow seleccion,
+            auxiliares.productos_mas_presentaciones puu)
+        {
+            puu.Valido = this.valido;
+            pu.Idpresentacion_poroducto = seleccion.Cells[8].Value.ToString();
+            if (seleccion.Cells[11].Value.ToString().Equals("Detalle"))
+            {
+                pu.TipoUtilidad = seleccion.Cells[9].Value.ToString();
+            }
+            else
+            {
+                pu.TipoUtilidad = seleccion.Cells[10].Value.ToString();
+            }
+
+            pu.Sucursal_producto = seleccion.Cells[0].Value.ToString();
+            pu.Codigo = seleccion.Cells[1].Value.ToString();
+            pu.lblExis.Text = seleccion.Cells[6].Value.ToString();
+            pu.lblNombre.Text = seleccion.Cells[2].Value.ToString();
+            pu.lblPres.Text = seleccion.Cells[7].Value.ToString();
+            pu.lblPrecio.Text = "$" + seleccion.Cells[5].Value.ToString();
+            pu.Precio = seleccion.Cells[5].Value.ToString();
+            pu.txtCantidad.Value = 1;
+            pu.CantidadInter = "1";
+
+            pu.ShowDialog();
+
+            if (pu.Llenado)
+            {
+                //si la tabla esta vacia
+                if (tabla_articulos.Rows.Count == 0)
+                {
+                    barraDeprogreso(10);
+                    tabla_articulos.Rows.Add(
+                    "",
+                    pu.Codigo,
+                    pu.lblNombre.Text,
+                    pu.lblPres.Text,
+                    pu.txtCantidad.Value.ToString(),
+                    pu.Precio,
+                    pu.Total,
+                    pu.Idpresentacion_poroducto,
+                    pu.Utilidad,
+                    "",
+                    "1",
+                    pu.lblExis.Text,
+                    pu.Sucursal_producto,
+                    pu.TipoUtilidad,
+                    pu.TipoUtilidad,
+                    Convert.ToInt16(pu.Uti_detalle).ToString()
+                    );
+
+                    Console.WriteLine("estes el tipo: " + Convert.ToInt16(pu.Uti_detalle).ToString());
+                    colocarEnelutimoRegistro();
+                }
+                else
+                {
+                    //si el articulo no esta repetido
+                    if (!productoRepetido(pu.Idpresentacion_poroducto, pu.txtCantidad.Value.ToString()))
+                    {
+                        barraDeprogreso(10);
+                        tabla_articulos.Rows.Add(
+                    "",
+                    pu.Codigo,
+                    pu.lblNombre.Text,
+                    pu.lblPres.Text,
+                    pu.txtCantidad.Value.ToString(),
+                    pu.Precio,
+                    pu.Total,
+                    pu.Idpresentacion_poroducto,
+                    pu.Utilidad,
+                    "",
+                    "1",
+                    pu.lblExis.Text,
+                    pu.Sucursal_producto,
+                    pu.TipoUtilidad,
+                    pu.TipoUtilidad,
+                    Convert.ToInt16(puu.Uti_detalle).ToString()
+                    );
+                        colocarEnelutimoRegistro();
+                    }
+                }
+
+                utilitarios.cargar_tablas.correlativoTabla(tabla_articulos);
+                calcularTotales();
             }
         }
 

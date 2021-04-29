@@ -279,3 +279,10 @@ INSERT INTO productos (nom_producto,fecha_ingreso,idcategoria,idmarca) VALUES('E
 INSERT INTO proveedores_productos (idproveedor,idproducto) VALUES('2','6258');
 INSERT INTO productos (nom_producto,fecha_ingreso,idcategoria,idmarca) VALUES('PRUEBA DANI','2021-04-04 20:03:14','60','53');
 INSERT INTO proveedores_productos (idproveedor,idproducto) VALUES('2','6259');
+INSERT INTO productos (nom_producto,fecha_ingreso,idcategoria,idmarca) VALUES('MIROFONO ARTESANAL','2021-04-25 21:31:13','1','576');
+INSERT INTO proveedores_productos (idproveedor,idproducto) VALUES('20','6260');
+UPDATE productos SET nom_producto='MICROFONO ARTESANAL', fecha_ingreso='2021-04-25 21:31:13', idcategoria='1', idmarca='576', UPDATE productos SET nom_producto='MICROFONO ARTESANAL', fecha_ingreso='2021-04-25 21:31:13', idcategoria='1', idmarca='576' WHERE idproducto='6260';
+INSERT INTO productos (nom_producto,fecha_ingreso,idcategoria,idmarca) VALUES('MICROFONO ARTESANAL 2','2021-04-25 21:37:29','60','53');
+INSERT INTO proveedores_productos (idproveedor,idproducto) VALUES('2','6261');
+INSERT INTO productos (nom_producto,fecha_ingreso,idcategoria,idmarca) VALUES('MICROFONO ARTESANAL 4','2021-04-25 21:38:52','60','53');
+INSERT INTO proveedores_productos (idproveedor,idproducto) VALUES('2','6262');

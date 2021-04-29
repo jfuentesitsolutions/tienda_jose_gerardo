@@ -37,12 +37,13 @@
             this.txtCantidad = new System.Windows.Forms.NumericUpDown();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tablaPres = new System.Windows.Forms.DataGridView();
+            this.error = new System.Windows.Forms.ErrorProvider(this.components);
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.error = new System.Windows.Forms.ErrorProvider(this.components);
+            this.tipoV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCantidad)).BeginInit();
@@ -137,7 +138,8 @@
             this.Column2,
             this.Column3,
             this.Column4,
-            this.Column5});
+            this.Column5,
+            this.tipoV});
             this.tablaPres.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tablaPres.Location = new System.Drawing.Point(3, 22);
             this.tablaPres.MultiSelect = false;
@@ -148,6 +150,11 @@
             this.tablaPres.Size = new System.Drawing.Size(288, 148);
             this.tablaPres.TabIndex = 0;
             this.tablaPres.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tablaPres_KeyDown);
+            // 
+            // error
+            // 
+            this.error.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.error.ContainerControl = this;
             // 
             // Column1
             // 
@@ -189,10 +196,13 @@
             this.Column5.ReadOnly = true;
             this.Column5.Visible = false;
             // 
-            // error
+            // tipoV
             // 
-            this.error.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
-            this.error.ContainerControl = this;
+            this.tipoV.DataPropertyName = "tipo_precio";
+            this.tipoV.HeaderText = "tipo_pre";
+            this.tipoV.Name = "tipoV";
+            this.tipoV.ReadOnly = true;
+            this.tipoV.Visible = false;
             // 
             // productos_mas_presentaciones
             // 
@@ -239,5 +249,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tipoV;
     }
 }

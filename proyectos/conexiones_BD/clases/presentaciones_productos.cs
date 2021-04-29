@@ -11,7 +11,7 @@ namespace conexiones_BD.clases
     public class presentaciones_productos : entidad
     {
         string idpresentacion_producto, idsucursal_producto,
-            idpresentacion, cantidad_unidades, precio, tipo, prioridad, cod_producto, correla, estado;
+            idpresentacion, cantidad_unidades, precio, tipo, prioridad, cod_producto, correla, estado, preci_estado;
 
         public string Idsucursal_producto
         {
@@ -131,6 +131,7 @@ namespace conexiones_BD.clases
         }
 
         public string Idpresentacion_producto { get => idpresentacion_producto; set => idpresentacion_producto = value; }
+        public string Preci_estado { get => preci_estado; set => preci_estado = value; }
 
         public presentaciones_productos() { }
         public presentaciones_productos(string idpresentacion_producto)
@@ -150,7 +151,15 @@ namespace conexiones_BD.clases
             base.busquedaDatos(campos, valores, "presentaciones_productos");
         }
 
-        public presentaciones_productos(string idpresentacion_producto, string idsucursal_producto, string idpresentacion, string cantidad_unidades, string precio, string tipo, string pri, string estado)
+        public presentaciones_productos(string idpresentacion_producto, 
+            string idsucursal_producto, 
+            string idpresentacion, 
+            string cantidad_unidades, 
+            string precio, 
+            string tipo, 
+            string pri, 
+            string estado,
+            string p_es)
         {
             this.Idpresentacion_producto = idpresentacion_producto;
             this.idsucursal_producto = idsucursal_producto;
@@ -160,10 +169,18 @@ namespace conexiones_BD.clases
             this.Tipo = tipo;
             this.Prioridad = pri;
             this.Estado = estado;
+            this.preci_estado = p_es;
             base.cargarDatosModificados(generarCampos(), generarValores(), "presentaciones_productos", idpresentacion_producto, "idpresentacion_producto");
         }
 
-        public presentaciones_productos(string idsucursal_producto, string idpresentacion, string cantidad_unidades, string precio, string tipo, string pri, string estado)
+        public presentaciones_productos(string idsucursal_producto, 
+            string idpresentacion, 
+            string cantidad_unidades, 
+            string precio, 
+            string tipo, 
+            string pri, 
+            string estado,
+            string p_esta)
         {
             this.idsucursal_producto = idsucursal_producto;
             this.Idpresentacion = idpresentacion;
@@ -172,6 +189,7 @@ namespace conexiones_BD.clases
             this.Tipo = tipo;
             this.Prioridad = pri;
             this.Estado = estado;
+            this.preci_estado = p_esta;
             base.cargarDatos(generarCampos(), generarValores(), "presentaciones_productos");
         }
 
@@ -185,6 +203,7 @@ namespace conexiones_BD.clases
             campos.Add("tipo");
             campos.Add("prioridad");
             campos.Add("estado");
+            campos.Add("tipo_precio");
             return campos;
         }
 
@@ -198,6 +217,7 @@ namespace conexiones_BD.clases
             valores.Add(Tipo);
             valores.Add(Prioridad);
             valores.Add(estado);
+            valores.Add(preci_estado);
             return valores;
         }
 
@@ -214,7 +234,8 @@ namespace conexiones_BD.clases
                 "idpresentacion='"+this.idpresentacion+"', " +
                 "cantidad_unidades='" + this.cantidad_unidades + "', " +
                 "precio='" + this.precio + "', tipo='" + this.tipo + "', " +
-                "prioridad='" + this.prioridad + "', estado='" + this.estado + "' " +
+                "prioridad='" + this.prioridad + "', estado='" + this.estado + "', " +
+                "tipo_precio='" + this.preci_estado + "' "+
                 "WHERE idpresentacion_producto='" + this.Idpresentacion_producto + "';";
 
             Console.WriteLine("Que suscede: "+Consulta);
@@ -272,7 +293,15 @@ namespace conexiones_BD.clases
         {
             DataTable Datos = new DataTable();
             String Consulta;
-            Consulta = @"select pp.idpresentacion_producto, pp.idpresentacion, p.nombre_presentacion, pp.cantidad_unidades, pp.precio, pp.tipo, pp.prioridad, pp.estado
+            Consulta = @"select pp.idpresentacion_producto, 
+                        pp.idpresentacion, 
+                        p.nombre_presentacion, 
+                        pp.cantidad_unidades, 
+                        pp.precio, 
+                        pp.tipo, 
+                        pp.prioridad, 
+                        pp.estado,
+                        pp.tipo_precio
                         from presentaciones_productos pp, sucursales_productos sp, presentaciones p
                         where pp.idsucursal_producto = sp.idsucursal_producto and pp.idpresentacion = p.idpresentacion and sp.idsucursal_producto = '"+idsuc_p+@"'
                         order by pp.prioridad asc
@@ -295,11 +324,12 @@ namespace conexiones_BD.clases
         {
             DataTable Datos = new DataTable();
             String Consulta;
-            Consulta = @"SELECT p.nombre_presentacion, pp.tipo, pp.precio, pp.cantidad_unidades, pp.estado, pp.idsucursal_producto
-FROM presentaciones_productos pp
-INNER JOIN presentaciones p on pp.idpresentacion=p.idpresentacion
-INNER JOIN sucursales_productos sp on pp.idsucursal_producto=sp.idsucursal_producto
-;";
+            Consulta = @"SELECT p.nombre_presentacion, pp.tipo, pp.precio, pp.cantidad_unidades, 
+                        pp.estado, pp.idsucursal_producto
+                        FROM presentaciones_productos pp
+                        INNER JOIN presentaciones p on pp.idpresentacion=p.idpresentacion
+                        INNER JOIN sucursales_productos sp on pp.idsucursal_producto=sp.idsucursal_producto
+                        ;";
             operaciones oOperacion = new operaciones();
             oOperacion.Conexion_remota = cr;
             try
@@ -318,7 +348,9 @@ INNER JOIN sucursales_productos sp on pp.idsucursal_producto=sp.idsucursal_produ
         {
             DataTable Datos = new DataTable();
             String Consulta;
-            Consulta = @"select pp.idpresentacion_producto, pp.idpresentacion, p.nombre_presentacion, pp.cantidad_unidades, pp.precio, pp.tipo, pp.prioridad, pp.estado, concat(p.nombre_presentacion,'x',pp.cantidad_unidades) as nombre
+            Consulta = @"select pp.idpresentacion_producto, pp.idpresentacion, p.nombre_presentacion, 
+                        pp.cantidad_unidades, pp.precio, pp.tipo, pp.prioridad, pp.estado, 
+                        concat(p.nombre_presentacion,'x',pp.cantidad_unidades) as nombre, pp.tipo_precio
                         from presentaciones_productos pp, sucursales_productos sp, presentaciones p
                         where pp.idsucursal_producto = sp.idsucursal_producto and pp.idpresentacion = p.idpresentacion and sp.idsucursal_producto = '" + idsuc_p + @"' and pp.estado=1
                         order by pp.prioridad asc
@@ -365,7 +397,8 @@ INNER JOIN sucursales_productos sp on pp.idsucursal_producto=sp.idsucursal_produ
             Consulta = @"select p.nombre_presentacion, p.idpresentacion, pp.precio, pp.idpresentacion_producto
                         from presentaciones_productos pp, presentaciones p, sucursales_productos sp
                         where pp.idpresentacion=p.idpresentacion and pp.idsucursal_producto=sp.idsucursal_producto
-                        and pp.idsucursal_producto=(select sspp.idsucursal_producto from sucursales_productos sspp, productos p where sspp.idproducto=p.idproducto and p.cod_producto='" + codi+@"') and pp.estado=1;
+                        and pp.idsucursal_producto=(select sspp.idsucursal_producto from sucursales_productos sspp, 
+                        productos p where sspp.idproducto=p.idproducto and p.cod_producto='" + codi+@"') and pp.estado=1;
                         ;";
             conexiones_BD.operaciones oOperacion = new conexiones_BD.operaciones();
             try
@@ -444,6 +477,12 @@ where pp.idpresentacion = p.idpresentacion and pp.idsucursal_producto = '" + ids
             return sentencia;
         }
 
+        public string modificar_tipo_precio()
+        {
+            string sentencia = "UPDATE presentaciones_productos SET tipo_precio = '" + preci_estado + "' WHERE (idpresentacion_producto = '" + idpresentacion_producto + "')";
+            return sentencia;
+        }
+
         public string presentaciones_productos_asce()
         {
             string sentencia = @"select p.nombre_presentacion, pp.cantidad_unidades  
@@ -454,6 +493,8 @@ where pp.idpresentacion = p.idpresentacion and pp.idsucursal_producto = '" + ids
                                 order by pp.cantidad_unidades desc; ";
             return sentencia;
         }
+
+        /*No  utilizado*/
 
         public XmlNode creaPresentaPro(XmlDocument doc)
         {

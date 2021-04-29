@@ -255,7 +255,8 @@ namespace interfaces.mantenimientos.procesos_iniciales
                         Math.Round(pp.precio.Value, 2).ToString(),
                         pp.TipoN,
                         priori,
-                        "1"
+                        "1",
+                        pp.TipoPI
                         );
 
                     if (prpr.guardar(false, false) > 0)

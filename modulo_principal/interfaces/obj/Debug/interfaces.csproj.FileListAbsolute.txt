@@ -1133,3 +1133,4 @@ H:\proyecto_tienda\tienda_jose_gerardo\modulo_principal\interfaces\bin\Debug\Mic
 H:\proyecto_tienda\tienda_jose_gerardo\modulo_principal\interfaces\obj\Debug\interfaces.Reportes.Interfaz.auxiliares.tipos_categorias.resources
 H:\proyecto_tienda\tienda_jose_gerardo\modulo_principal\interfaces\obj\Debug\interfaces.Reportes.Interfaz.auxiliares.tipos_estantes.resources
 H:\proyecto_tienda\tienda_jose_gerardo\modulo_principal\interfaces\obj\Debug\interfaces.Reportes.Interfaz.auxiliares.tipos_marcas.resources
+H:\proyecto_tienda\tienda_jose_gerardo\modulo_principal\interfaces\obj\Debug\interfaces.ventas.auxiliares.validacion_autorizacion.resources
