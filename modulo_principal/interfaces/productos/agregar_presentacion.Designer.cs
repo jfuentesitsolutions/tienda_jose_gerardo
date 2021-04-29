@@ -31,10 +31,12 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(agregar_presentacion));
             this.panelTitulo = new System.Windows.Forms.Panel();
+            this.cerrar = new System.Windows.Forms.PictureBox();
             this.lblEncanezado = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lista_presentaciones = new System.Windows.Forms.ComboBox();
             this.grpGeneral = new System.Windows.Forms.GroupBox();
+            this.btnAgregar = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.chkEstado = new System.Windows.Forms.CheckBox();
             this.chkPriori = new System.Windows.Forms.CheckBox();
@@ -45,10 +47,10 @@
             this.chkDetalle = new System.Windows.Forms.RadioButton();
             this.chkMayoreo = new System.Windows.Forms.RadioButton();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.btnAgregar = new System.Windows.Forms.Button();
-            this.cerrar = new System.Windows.Forms.PictureBox();
             this.error = new System.Windows.Forms.ErrorProvider(this.components);
+            this.chkTPrecio = new System.Windows.Forms.CheckBox();
             this.panelTitulo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cerrar)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.grpGeneral.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -56,7 +58,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtCantidad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPrecio)).BeginInit();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.error)).BeginInit();
             this.SuspendLayout();
             // 
@@ -71,6 +72,19 @@
             this.panelTitulo.Size = new System.Drawing.Size(276, 46);
             this.panelTitulo.TabIndex = 3;
             this.panelTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitulo_MouseDown);
+            // 
+            // cerrar
+            // 
+            this.cerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cerrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cerrar.Image = ((System.Drawing.Image)(resources.GetObject("cerrar.Image")));
+            this.cerrar.Location = new System.Drawing.Point(229, 6);
+            this.cerrar.Name = "cerrar";
+            this.cerrar.Size = new System.Drawing.Size(32, 32);
+            this.cerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.cerrar.TabIndex = 2;
+            this.cerrar.TabStop = false;
+            this.cerrar.Click += new System.EventHandler(this.cerrar_Click);
             // 
             // lblEncanezado
             // 
@@ -113,19 +127,33 @@
             this.grpGeneral.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grpGeneral.Location = new System.Drawing.Point(0, 104);
             this.grpGeneral.Name = "grpGeneral";
-            this.grpGeneral.Size = new System.Drawing.Size(276, 295);
+            this.grpGeneral.Size = new System.Drawing.Size(276, 341);
             this.grpGeneral.TabIndex = 9;
             this.grpGeneral.TabStop = false;
             this.grpGeneral.Text = "Detalles generales";
             // 
+            // btnAgregar
+            // 
+            this.btnAgregar.Image = global::interfaces.Properties.Resources.plus_16;
+            this.btnAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAgregar.Location = new System.Drawing.Point(86, 301);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(85, 28);
+            this.btnAgregar.TabIndex = 11;
+            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            // 
             // groupBox5
             // 
+            this.groupBox5.Controls.Add(this.chkTPrecio);
             this.groupBox5.Controls.Add(this.chkEstado);
             this.groupBox5.Controls.Add(this.chkPriori);
             this.groupBox5.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox5.Location = new System.Drawing.Point(3, 164);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(270, 72);
+            this.groupBox5.Size = new System.Drawing.Size(270, 118);
             this.groupBox5.TabIndex = 10;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Configuraciones";
@@ -135,7 +163,7 @@
             this.chkEstado.AutoSize = true;
             this.chkEstado.Checked = true;
             this.chkEstado.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkEstado.Location = new System.Drawing.Point(150, 33);
+            this.chkEstado.Location = new System.Drawing.Point(150, 36);
             this.chkEstado.Name = "chkEstado";
             this.chkEstado.Size = new System.Drawing.Size(70, 23);
             this.chkEstado.TabIndex = 12;
@@ -145,7 +173,7 @@
             // chkPriori
             // 
             this.chkPriori.AutoSize = true;
-            this.chkPriori.Location = new System.Drawing.Point(29, 33);
+            this.chkPriori.Location = new System.Drawing.Point(29, 37);
             this.chkPriori.Name = "chkPriori";
             this.chkPriori.Size = new System.Drawing.Size(84, 23);
             this.chkPriori.TabIndex = 11;
@@ -237,42 +265,26 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "groupBox3";
             // 
-            // btnAgregar
-            // 
-            this.btnAgregar.Image = global::interfaces.Properties.Resources.plus_16;
-            this.btnAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAgregar.Location = new System.Drawing.Point(95, 248);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(85, 28);
-            this.btnAgregar.TabIndex = 11;
-            this.btnAgregar.Text = "Agregar";
-            this.btnAgregar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAgregar.UseVisualStyleBackColor = true;
-            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
-            // 
-            // cerrar
-            // 
-            this.cerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cerrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cerrar.Image = ((System.Drawing.Image)(resources.GetObject("cerrar.Image")));
-            this.cerrar.Location = new System.Drawing.Point(229, 6);
-            this.cerrar.Name = "cerrar";
-            this.cerrar.Size = new System.Drawing.Size(32, 32);
-            this.cerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.cerrar.TabIndex = 2;
-            this.cerrar.TabStop = false;
-            this.cerrar.Click += new System.EventHandler(this.cerrar_Click);
-            // 
             // error
             // 
             this.error.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.error.ContainerControl = this;
             // 
+            // chkTPrecio
+            // 
+            this.chkTPrecio.AutoSize = true;
+            this.chkTPrecio.Location = new System.Drawing.Point(29, 73);
+            this.chkTPrecio.Name = "chkTPrecio";
+            this.chkTPrecio.Size = new System.Drawing.Size(97, 23);
+            this.chkTPrecio.TabIndex = 13;
+            this.chkTPrecio.Text = "Tipo precio";
+            this.chkTPrecio.UseVisualStyleBackColor = true;
+            // 
             // agregar_presentacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(276, 399);
+            this.ClientSize = new System.Drawing.Size(276, 445);
             this.Controls.Add(this.grpGeneral);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panelTitulo);
@@ -285,6 +297,7 @@
             this.Load += new System.EventHandler(this.agregar_presentacion_Load);
             this.panelTitulo.ResumeLayout(false);
             this.panelTitulo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cerrar)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.grpGeneral.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
@@ -294,7 +307,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtPrecio)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cerrar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.error)).EndInit();
             this.ResumeLayout(false);
 
@@ -320,5 +332,6 @@
         private System.Windows.Forms.RadioButton chkMayoreo;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.ErrorProvider error;
+        private System.Windows.Forms.CheckBox chkTPrecio;
     }
 }

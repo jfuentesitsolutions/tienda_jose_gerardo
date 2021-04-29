@@ -82,7 +82,7 @@ namespace interfaces.productos
 
         private void guardar_presentacion()
         {
-            string prio = "2", esta = "2";
+            string prio = "2", esta = "2", tipoP="2";
             if (chkPriori.Checked)
             {
                 prio = "1";
@@ -91,13 +91,18 @@ namespace interfaces.productos
             {
                 esta = "1";
             }
+            if (chkTPrecio.Checked)
+            {
+                tipoP = "1";
+            }
             pp = new conexiones_BD.clases.presentaciones_productos(idsuc_producto,
                 lista_presentaciones.SelectedValue.ToString(),
                 txtCantidad.Value.ToString(),
                 txtPrecio.Value.ToString(),
                 tipoPrese(),
                 prio,
-                esta
+                esta,
+                tipoP
                 );
             using (espera_datos.splash_espera es=new espera_datos.splash_espera())
             {

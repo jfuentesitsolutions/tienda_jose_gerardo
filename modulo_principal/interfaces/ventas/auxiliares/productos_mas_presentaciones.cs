@@ -15,10 +15,11 @@ namespace interfaces.ventas.auxiliares
         string idsucursalProducto = null;
         string idpresentacion_poroducto, total, utilidad, utiliadM, utilidadD, precio, codigo, presentacion, cantidad_interna, sucursal_producto;
         bool llenado = false;
-        bool modificar = false;
+        bool modificar = false, valido=false;
         utilitarios.cargar_tablas tabla;
         TextBox bus;
         bool uti_detalle = false;
+        sessionManager.secion sesion = sessionManager.secion.Instancia;
 
         public productos_mas_presentaciones()
         {
@@ -182,8 +183,41 @@ namespace interfaces.ventas.auxiliares
         {
             if (e.KeyCode == Keys.Enter)
             {
-                e.SuppressKeyPress = true;
-                txtCantidad.Focus();
+                if (tablaPres.CurrentRow.Cells[5].Value.ToString().Equals("Especial"))
+                {
+                    if(sesion.Datos[3].Equals("Administradores") || Valido)
+                    {
+                        e.SuppressKeyPress = true;
+                        txtCantidad.Enabled = true;
+                        txtCantidad.Focus();
+                    }
+                    else
+                    {
+                        txtCantidad.Enabled = false;
+                        validacion_autorizacion validar = new validacion_autorizacion();
+                        validar.ShowDialog();
+                        if (validar.Valido)
+                        {
+                            this.valido = validar.Valido;
+                            txtCantidad.Enabled = true;
+                            e.SuppressKeyPress = true;
+                            txtCantidad.Focus();
+                        }
+                        else
+                        {
+                            this.valido = validar.Valido;
+                            tablaPres.Focus();
+                            txtCantidad.Enabled = false;
+                        }
+                    }
+                }
+                else
+                {
+                    e.SuppressKeyPress = true;
+                    txtCantidad.Enabled = true;
+                    txtCantidad.Focus();
+                }
+                
             }
         }
 
@@ -247,6 +281,7 @@ namespace interfaces.ventas.auxiliares
         }
 
         public bool Uti_detalle { get => uti_detalle; set => uti_detalle = value; }
+        public bool Valido { get => valido; set => valido = value; }
 
         private void cerrar_Click(object sender, EventArgs e)
         {
@@ -258,12 +293,30 @@ namespace interfaces.ventas.auxiliares
             bus = new TextBox();
             tabla = new utilitarios.cargar_tablas(tablaPres, bus, conexiones_BD.clases.presentaciones_productos.presentacionesXproducto2(idsucursalProducto), "nombre_presentacion");
             tabla.cargarSinContadorRegistros();
+            this.revisar_tipos_precios();
             txtCantidad.Value = 1;
         }
 
         private void txtCantidad_Enter(object sender, EventArgs e)
         {
-            txtCantidad.Select(0, txtCantidad.Text.Length);
+            if (tablaPres.CurrentRow.Cells[5].Value.ToString().Equals("Especial"))
+            {
+                if(sesion.Datos[3].Equals("Administradores") || valido)
+                {
+                    txtCantidad.Enabled = true;
+                    txtCantidad.Select(0, txtCantidad.Text.Length);
+                }
+                else
+                {
+                    txtCantidad.Enabled = false;
+                    tablaPres.Focus();
+                } 
+            }
+            else
+            {
+                txtCantidad.Select(0, txtCantidad.Text.Length);
+                txtCantidad.Enabled = true;
+            }         
         }
 
         private bool revisarExistencias()
@@ -307,6 +360,20 @@ namespace interfaces.ventas.auxiliares
             }
             
             
+        }
+
+        private void revisar_tipos_precios()
+        {
+            if (tablaPres.Rows.Count != 0)
+            {
+                foreach(DataGridViewRow fila in tablaPres.Rows)
+                {
+                    if (fila.Cells[5].Value.ToString().Equals("Especial"))
+                    {
+                        fila.DefaultCellStyle.BackColor = Color.FromArgb(229, 115, 115);
+                    }
+                }
+            }
         }
     }
 }

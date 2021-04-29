@@ -35,6 +35,7 @@
             this.lblTitulo = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.chkPrioridad = new System.Windows.Forms.CheckBox();
             this.canti = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
             this.precio = new System.Windows.Forms.NumericUpDown();
@@ -45,7 +46,9 @@
             this.chkM = new System.Windows.Forms.RadioButton();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.error = new System.Windows.Forms.ErrorProvider(this.components);
-            this.chkPrioridad = new System.Windows.Forms.CheckBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.chkTPreNorm = new System.Windows.Forms.RadioButton();
+            this.chkTPreEspe = new System.Windows.Forms.RadioButton();
             this.panelTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cerrar)).BeginInit();
             this.panel1.SuspendLayout();
@@ -54,6 +57,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.precio)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.error)).BeginInit();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelTitulo
@@ -96,13 +100,14 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.DarkGray;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.groupBox3);
             this.panel1.Controls.Add(this.groupBox2);
             this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Controls.Add(this.btnGuardar);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 45);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(283, 342);
+            this.panel1.Size = new System.Drawing.Size(283, 396);
             this.panel1.TabIndex = 0;
             // 
             // groupBox2
@@ -113,12 +118,22 @@
             this.groupBox2.Controls.Add(this.precio);
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.lblPresenta);
-            this.groupBox2.Location = new System.Drawing.Point(13, 102);
+            this.groupBox2.Location = new System.Drawing.Point(13, 89);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(257, 177);
+            this.groupBox2.Size = new System.Drawing.Size(257, 181);
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos";
+            // 
+            // chkPrioridad
+            // 
+            this.chkPrioridad.AutoSize = true;
+            this.chkPrioridad.Location = new System.Drawing.Point(29, 153);
+            this.chkPrioridad.Name = "chkPrioridad";
+            this.chkPrioridad.Size = new System.Drawing.Size(84, 23);
+            this.chkPrioridad.TabIndex = 4;
+            this.chkPrioridad.Text = "Prioridad";
+            this.chkPrioridad.UseVisualStyleBackColor = true;
             // 
             // canti
             // 
@@ -226,7 +241,7 @@
             // 
             this.btnGuardar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuardar.Location = new System.Drawing.Point(102, 301);
+            this.btnGuardar.Location = new System.Drawing.Point(102, 354);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 29);
             this.btnGuardar.TabIndex = 1;
@@ -239,21 +254,46 @@
             this.error.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.error.ContainerControl = this;
             // 
-            // chkPrioridad
+            // groupBox3
             // 
-            this.chkPrioridad.AutoSize = true;
-            this.chkPrioridad.Location = new System.Drawing.Point(29, 147);
-            this.chkPrioridad.Name = "chkPrioridad";
-            this.chkPrioridad.Size = new System.Drawing.Size(84, 23);
-            this.chkPrioridad.TabIndex = 4;
-            this.chkPrioridad.Text = "Prioridad";
-            this.chkPrioridad.UseVisualStyleBackColor = true;
+            this.groupBox3.Controls.Add(this.chkTPreNorm);
+            this.groupBox3.Controls.Add(this.chkTPreEspe);
+            this.groupBox3.Location = new System.Drawing.Point(13, 276);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(258, 67);
+            this.groupBox3.TabIndex = 3;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Tipo de precio";
+            // 
+            // chkTPreNorm
+            // 
+            this.chkTPreNorm.AutoSize = true;
+            this.chkTPreNorm.Checked = true;
+            this.chkTPreNorm.Location = new System.Drawing.Point(152, 25);
+            this.chkTPreNorm.Name = "chkTPreNorm";
+            this.chkTPreNorm.Size = new System.Drawing.Size(73, 23);
+            this.chkTPreNorm.TabIndex = 1;
+            this.chkTPreNorm.TabStop = true;
+            this.chkTPreNorm.Text = "Normal";
+            this.chkTPreNorm.UseVisualStyleBackColor = true;
+            this.chkTPreNorm.CheckedChanged += new System.EventHandler(this.chkTPreNorm_CheckedChanged);
+            // 
+            // chkTPreEspe
+            // 
+            this.chkTPreEspe.AutoSize = true;
+            this.chkTPreEspe.Location = new System.Drawing.Point(28, 26);
+            this.chkTPreEspe.Name = "chkTPreEspe";
+            this.chkTPreEspe.Size = new System.Drawing.Size(77, 23);
+            this.chkTPreEspe.TabIndex = 0;
+            this.chkTPreEspe.Text = "Especial";
+            this.chkTPreEspe.UseVisualStyleBackColor = true;
+            this.chkTPreEspe.CheckedChanged += new System.EventHandler(this.chkTPreEspe_CheckedChanged);
             // 
             // presentaciones_productos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(283, 387);
+            this.ClientSize = new System.Drawing.Size(283, 441);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelTitulo);
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -277,6 +317,8 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.error)).EndInit();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -299,5 +341,8 @@
         public System.Windows.Forms.Label lblPresenta;
         private System.Windows.Forms.ErrorProvider error;
         public System.Windows.Forms.CheckBox chkPrioridad;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.RadioButton chkTPreNorm;
+        private System.Windows.Forms.RadioButton chkTPreEspe;
     }
 }

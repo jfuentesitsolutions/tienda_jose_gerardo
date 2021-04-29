@@ -249,7 +249,8 @@ namespace interfaces.mantenimientos.negocio
                 canti.Value.ToString(), 
                 precio.Value.ToString(), 
                 tipoPrese(),
-                prio);
+                prio,
+                "2");
 
             if (pp.modificar(true, false) > 0)
             {

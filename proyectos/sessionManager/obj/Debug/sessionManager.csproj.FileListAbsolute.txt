@@ -53,3 +53,4 @@ H:\proyecto_tienda\tienda_jose_gerardo\proyectos\sessionManager\bin\Debug\sessio
 H:\proyecto_tienda\tienda_jose_gerardo\proyectos\sessionManager\obj\Debug\sessionManager.csproj.CoreCompileInputs.cache
 H:\proyecto_tienda\tienda_jose_gerardo\proyectos\sessionManager\obj\Debug\sessionManager.dll
 H:\proyecto_tienda\tienda_jose_gerardo\proyectos\sessionManager\obj\Debug\sessionManager.pdb
+H:\proyecto_tienda\tienda_jose_gerardo\proyectos\sessionManager\obj\Debug\sessionManager.csprojAssemblyReference.cache

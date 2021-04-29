@@ -684,6 +684,12 @@
     <Compile Include="ventas\auxiliares\producto_unica_presentacion.Designer.cs">
       <DependentUpon>producto_unica_presentacion.cs</DependentUpon>
     </Compile>
+    <Compile Include="ventas\auxiliares\validacion_autorizacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ventas\auxiliares\validacion_autorizacion.Designer.cs">
+      <DependentUpon>validacion_autorizacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="ventas\panel\anulacion_de_ventas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -980,6 +986,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ventas\auxiliares\producto_unica_presentacion.resx">
       <DependentUpon>producto_unica_presentacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ventas\auxiliares\validacion_autorizacion.resx">
+      <DependentUpon>validacion_autorizacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ventas\panel\anulacion_de_ventas.resx">
       <DependentUpon>anulacion_de_ventas.cs</DependentUpon>

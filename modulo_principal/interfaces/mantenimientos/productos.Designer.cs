@@ -48,13 +48,6 @@
             this.btnAgregar = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.tabla_presentacion_producto = new System.Windows.Forms.DataGridView();
-            this.id1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.presen = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.prec = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.tabla_presentacion = new System.Windows.Forms.DataGridView();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -148,6 +141,14 @@
             this.error2 = new System.Windows.Forms.ErrorProvider(this.components);
             this.error3 = new System.Windows.Forms.ErrorProvider(this.components);
             this.error4 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.id1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.presen = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.prec = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipoP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cerrar)).BeginInit();
             this.contenidoTotal.SuspendLayout();
@@ -314,7 +315,8 @@
             this.Column2,
             this.Column1,
             this.Column3,
-            this.Column4});
+            this.Column4,
+            this.tipoP});
             this.tabla_presentacion_producto.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabla_presentacion_producto.Location = new System.Drawing.Point(0, 0);
             this.tabla_presentacion_producto.MultiSelect = false;
@@ -324,62 +326,7 @@
             this.tabla_presentacion_producto.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.tabla_presentacion_producto.Size = new System.Drawing.Size(282, 165);
             this.tabla_presentacion_producto.TabIndex = 0;
-            // 
-            // id1
-            // 
-            this.id1.DataPropertyName = "idpresentacion_producto";
-            this.id1.HeaderText = "ID_presentacion_pro";
-            this.id1.Name = "id1";
-            this.id1.ReadOnly = true;
-            this.id1.Visible = false;
-            this.id1.Width = 40;
-            // 
-            // presen
-            // 
-            this.presen.DataPropertyName = "idpresentacion";
-            this.presen.HeaderText = "ID";
-            this.presen.Name = "presen";
-            this.presen.ReadOnly = true;
-            this.presen.Width = 40;
-            // 
-            // prec
-            // 
-            this.prec.DataPropertyName = "nombre_presentacion";
-            this.prec.HeaderText = "Presentación";
-            this.prec.Name = "prec";
-            this.prec.ReadOnly = true;
-            this.prec.Width = 120;
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "precio";
-            this.Column2.HeaderText = "Precio";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Width = 75;
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "tipo";
-            this.Column1.HeaderText = "Tipo";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Width = 75;
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "cantidad_unidades";
-            this.Column3.HeaderText = "Unidades";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            this.Column3.Width = 75;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "tipoN";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            this.Column4.Visible = false;
+            
             // 
             // panel2
             // 
@@ -1425,6 +1372,70 @@
             this.error4.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.error4.ContainerControl = this;
             // 
+            // id1
+            // 
+            this.id1.DataPropertyName = "idpresentacion_producto";
+            this.id1.HeaderText = "ID_presentacion_pro";
+            this.id1.Name = "id1";
+            this.id1.ReadOnly = true;
+            this.id1.Visible = false;
+            this.id1.Width = 40;
+            // 
+            // presen
+            // 
+            this.presen.DataPropertyName = "idpresentacion";
+            this.presen.HeaderText = "ID";
+            this.presen.Name = "presen";
+            this.presen.ReadOnly = true;
+            this.presen.Width = 40;
+            // 
+            // prec
+            // 
+            this.prec.DataPropertyName = "nombre_presentacion";
+            this.prec.HeaderText = "Presentación";
+            this.prec.Name = "prec";
+            this.prec.ReadOnly = true;
+            this.prec.Width = 120;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "precio";
+            this.Column2.HeaderText = "Precio";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Width = 75;
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "tipo";
+            this.Column1.HeaderText = "Tipo";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Width = 75;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "cantidad_unidades";
+            this.Column3.HeaderText = "Unidades";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Width = 75;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "tipoN";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            this.Column4.Visible = false;
+            // 
+            // tipoP
+            // 
+            this.tipoP.DataPropertyName = "tipo_precio";
+            this.tipoP.HeaderText = "tipoP";
+            this.tipoP.Name = "tipoP";
+            this.tipoP.ReadOnly = true;
+            this.tipoP.Visible = false;
+            // 
             // productos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -1556,13 +1567,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn pre;
         private System.Windows.Forms.ErrorProvider error1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn presen;
-        private System.Windows.Forms.DataGridViewTextBoxColumn prec;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.ErrorProvider error2;
         private System.Windows.Forms.ErrorProvider error3;
         private System.Windows.Forms.ErrorProvider error4;
@@ -1599,5 +1603,13 @@
         private System.Windows.Forms.Button btnAgregarCodigo;
         public System.Windows.Forms.ComboBox listaCodigos;
         private System.Windows.Forms.TextBox txtCodigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn presen;
+        private System.Windows.Forms.DataGridViewTextBoxColumn prec;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tipoP;
     }
 }

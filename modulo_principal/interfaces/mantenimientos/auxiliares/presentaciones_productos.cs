@@ -12,7 +12,7 @@ namespace interfaces.mantenimientos.auxiliares
 {
     public partial class presentaciones_productos : Form
     {
-        string idpresentacion, tipo, tipoN;
+        string idpresentacion, tipo, tipoN, tipoPI, tipoP;
         Decimal precioM, precioD;
         bool agregado = false;
 
@@ -94,6 +94,9 @@ namespace interfaces.mantenimientos.auxiliares
             }
         }
 
+        public string TipoPI { get => tipoPI; set => tipoPI = value; }
+        public string TipoP { get => tipoP; set => tipoP = value; }
+
         public presentaciones_productos()
         {
             InitializeComponent();
@@ -128,12 +131,6 @@ namespace interfaces.mantenimientos.auxiliares
         {
             calcularTipo();
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            
-        }
-
         private void lblPresenta_Click(object sender, EventArgs e)
         {
             auxiliares.paquetes pa = new paquetes();
@@ -163,6 +160,16 @@ namespace interfaces.mantenimientos.auxiliares
             canti.Select(0, canti.Text.Length);
         }
 
+        private void chkTPreEspe_CheckedChanged(object sender, EventArgs e)
+        {
+            calcularTipoP();
+        }
+
+        private void chkTPreNorm_CheckedChanged(object sender, EventArgs e)
+        {
+            calcularTipoP();
+        }
+
         private void presentaciones_productos_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Escape)
@@ -175,6 +182,7 @@ namespace interfaces.mantenimientos.auxiliares
         {
             gadgets.horientaciones_textos.colocarTitulo(panelTitulo, lblTitulo);
             calcularTipo();
+            calcularTipoP();
         }
 
         private void calcularTipo()
@@ -189,6 +197,20 @@ namespace interfaces.mantenimientos.auxiliares
                 precio.Value = PrecioD;
                 tipo = "Detalle";
                 tipoN = "2";
+            }
+        }
+
+        private void calcularTipoP()
+        {
+            if (chkTPreEspe.Checked)
+            {
+                tipoP = "Especial";
+                tipoPI = "1";
+            }
+            else if (chkD.Checked)
+            {
+                tipoP = "Normal";
+                tipoPI = "2";
             }
         }
 

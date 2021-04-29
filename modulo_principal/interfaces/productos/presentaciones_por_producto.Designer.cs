@@ -46,6 +46,8 @@
             this.tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.prioe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.es = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ti_pre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pre_espe = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.panelTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnEliminar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAgregar)).BeginInit();
@@ -63,7 +65,7 @@
             this.panelTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTitulo.Location = new System.Drawing.Point(0, 0);
             this.panelTitulo.Name = "panelTitulo";
-            this.panelTitulo.Size = new System.Drawing.Size(793, 46);
+            this.panelTitulo.Size = new System.Drawing.Size(827, 46);
             this.panelTitulo.TabIndex = 4;
             this.panelTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitulo_MouseDown);
             // 
@@ -72,7 +74,7 @@
             this.btnEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEliminar.Image = global::interfaces.Properties.Resources.cancel;
-            this.btnEliminar.Location = new System.Drawing.Point(50, 8);
+            this.btnEliminar.Location = new System.Drawing.Point(47, 8);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(32, 32);
             this.btnEliminar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -85,7 +87,7 @@
             this.btnAgregar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAgregar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAgregar.Image = global::interfaces.Properties.Resources.plus_2;
-            this.btnAgregar.Location = new System.Drawing.Point(12, 8);
+            this.btnAgregar.Location = new System.Drawing.Point(9, 8);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(32, 32);
             this.btnAgregar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -98,7 +100,7 @@
             this.cerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cerrar.Image = ((System.Drawing.Image)(resources.GetObject("cerrar.Image")));
-            this.cerrar.Location = new System.Drawing.Point(758, 8);
+            this.cerrar.Location = new System.Drawing.Point(792, 8);
             this.cerrar.Name = "cerrar";
             this.cerrar.Size = new System.Drawing.Size(32, 32);
             this.cerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -133,12 +135,14 @@
             this.esta,
             this.tipo,
             this.prioe,
-            this.es});
+            this.es,
+            this.ti_pre,
+            this.pre_espe});
             this.tabla_presentaciones.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabla_presentaciones.Location = new System.Drawing.Point(0, 46);
             this.tabla_presentaciones.Name = "tabla_presentaciones";
             this.tabla_presentaciones.RowHeadersVisible = false;
-            this.tabla_presentaciones.Size = new System.Drawing.Size(793, 310);
+            this.tabla_presentaciones.Size = new System.Drawing.Size(827, 310);
             this.tabla_presentaciones.TabIndex = 5;
             this.tabla_presentaciones.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.tabla_presentaciones_CellBeginEdit);
             this.tabla_presentaciones.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tabla_presentaciones_CellContentClick);
@@ -193,12 +197,13 @@
             // 
             this.prio.HeaderText = "Prioridad";
             this.prio.Name = "prio";
+            this.prio.Width = 80;
             // 
             // esta
             // 
-            this.esta.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.esta.HeaderText = "Estado";
             this.esta.Name = "esta";
+            this.esta.Width = 80;
             // 
             // tipo
             // 
@@ -221,11 +226,24 @@
             this.es.Name = "es";
             this.es.Visible = false;
             // 
+            // ti_pre
+            // 
+            this.ti_pre.DataPropertyName = "tipo_precio";
+            this.ti_pre.HeaderText = "tipo_pre";
+            this.ti_pre.Name = "ti_pre";
+            this.ti_pre.Visible = false;
+            // 
+            // pre_espe
+            // 
+            this.pre_espe.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.pre_espe.HeaderText = "Precio especial";
+            this.pre_espe.Name = "pre_espe";
+            // 
             // presentaciones_por_producto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(793, 356);
+            this.ClientSize = new System.Drawing.Size(827, 356);
             this.Controls.Add(this.tabla_presentaciones);
             this.Controls.Add(this.panelTitulo);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -251,6 +269,8 @@
         private System.Windows.Forms.PictureBox cerrar;
         public System.Windows.Forms.Label lblEncanezado;
         private System.Windows.Forms.DataGridView tabla_presentaciones;
+        private System.Windows.Forms.PictureBox btnAgregar;
+        private System.Windows.Forms.PictureBox btnEliminar;
         private System.Windows.Forms.DataGridViewTextBoxColumn idpp;
         private System.Windows.Forms.DataGridViewTextBoxColumn idpr;
         private System.Windows.Forms.DataGridViewComboBoxColumn nom;
@@ -262,7 +282,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn tipo;
         private System.Windows.Forms.DataGridViewTextBoxColumn prioe;
         private System.Windows.Forms.DataGridViewTextBoxColumn es;
-        private System.Windows.Forms.PictureBox btnAgregar;
-        private System.Windows.Forms.PictureBox btnEliminar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ti_pre;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn pre_espe;
     }
 }
