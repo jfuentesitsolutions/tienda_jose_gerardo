@@ -342,6 +342,7 @@
             this.exist.DefaultCellStyle = dataGridViewCellStyle10;
             this.exist.HeaderText = "Existencias";
             this.exist.Name = "exist";
+            this.exist.ReadOnly = true;
             // 
             // marca
             // 

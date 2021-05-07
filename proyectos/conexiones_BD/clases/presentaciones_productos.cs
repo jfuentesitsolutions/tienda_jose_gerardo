@@ -485,7 +485,7 @@ where pp.idpresentacion = p.idpresentacion and pp.idsucursal_producto = '" + ids
 
         public string presentaciones_productos_asce()
         {
-            string sentencia = @"select p.nombre_presentacion, pp.cantidad_unidades  
+            string sentencia = @"select p.nombre_presentacion, pp.cantidad_unidades, pp.idpresentacion_producto  
                                 from presentaciones_productos pp, presentaciones p
                                 where pp.idpresentacion = p.idpresentacion
                                 and pp.idsucursal_producto = "+idsucursal_producto+@"

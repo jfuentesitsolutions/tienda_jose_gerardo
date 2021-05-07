@@ -28,6 +28,7 @@ namespace conexiones_BD.clases
         public string Idestante { get => idestante; set => idestante = value; }
         public string Kardex { get => kardex; set => kardex = value; }
         public string Estado { get => estado; set => estado = value; }
+        public string Existencias { get => existencias; set => existencias = value; }
 
         public sucursales_productos() { }
         public sucursales_productos(string idsucursal_producto, string idsucursal, string idproducto, 
@@ -41,7 +42,7 @@ namespace conexiones_BD.clases
             this.idutilidadMayoreo = idutilidadMayoreo;
             this.idutilidadDetalles = idutilidadDetalle;
             this.Idestante = idestante;
-            this.existencias = existencias;
+            this.Existencias = existencias;
             this.precio_ventaD = precio_ventaD;
             this.precio_compraD = precio_compraD;
             this.precio_ventaM = precio_ventaM;
@@ -73,7 +74,7 @@ namespace conexiones_BD.clases
             this.idutilidadMayoreo = idutilidadMayoreo;
             this.idutilidadDetalles = idutilidadDetalle;
             this.Idestante = idestante;
-            this.existencias = existencias;
+            this.Existencias = existencias;
             this.precio_ventaD = precio_ventaD;
             this.precio_compraD = precio_compraD;
             this.precio_ventaM = precio_ventaM;
@@ -92,7 +93,7 @@ namespace conexiones_BD.clases
         public sucursales_productos(string idsu, string cantidadN, string estado)
         {
             this.Idsucursal_producto = idsu;
-            existencias = cantidadN;
+            Existencias = cantidadN;
             this.Estado = estado;
         }
 
@@ -127,7 +128,7 @@ namespace conexiones_BD.clases
             valores.Add(idutilidadMayoreo);
             valores.Add(idutilidadDetalles);
             valores.Add(Idestante);
-            valores.Add(existencias);
+            valores.Add(Existencias);
             valores.Add(precio_ventaD);
             valores.Add(precio_compraD);
             valores.Add(precio_ventaM);
@@ -145,7 +146,7 @@ namespace conexiones_BD.clases
         public StringBuilder sentenciaModi()
         {
             StringBuilder sentencia = new StringBuilder();
-            sentencia.Append("UPDATE sucursales_productos SET idsucursal='"+idsucursal+"', idproducto='"+idproducto+"', idutilidadMayoreo='"+idutilidadMayoreo+"', idutilidadDetalles='"+idutilidadDetalles+"', idestante='"+Idestante+"', existencias='"+existencias+"', precio_venta='"+precio_ventaD+"', precio_compra='"+precio_compraD+"', precio_ventaM='"+precio_ventaM+"', precio_compraM='"+precio_compraM+ "', kardex='" + Kardex + "', estado='"+Estado+"' WHERE idsucursal_producto='" + Idsucursal_producto+"';");
+            sentencia.Append("UPDATE sucursales_productos SET idsucursal='"+idsucursal+"', idproducto='"+idproducto+"', idutilidadMayoreo='"+idutilidadMayoreo+"', idutilidadDetalles='"+idutilidadDetalles+"', idestante='"+Idestante+"', existencias='"+Existencias+"', precio_venta='"+precio_ventaD+"', precio_compra='"+precio_compraD+"', precio_ventaM='"+precio_ventaM+"', precio_compraM='"+precio_compraM+ "', kardex='" + Kardex + "', estado='"+Estado+"' WHERE idsucursal_producto='" + Idsucursal_producto+"';");
             return sentencia;
         }
 
@@ -159,7 +160,7 @@ namespace conexiones_BD.clases
         public StringBuilder modificarExistenciaProducto()
         {
             StringBuilder sentencia = new StringBuilder();
-            sentencia.Append("UPDATE sucursales_productos SET existencias='" + existencias + "' WHERE idsucursal_producto='" + Idsucursal_producto + "';");
+            sentencia.Append("UPDATE sucursales_productos SET existencias='" + Existencias + "' WHERE idsucursal_producto='" + Idsucursal_producto + "';");
             return sentencia;
         }
 
