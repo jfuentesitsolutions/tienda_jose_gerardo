@@ -71,6 +71,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="clases\ajustes.cs" />
     <Compile Include="clases\bancos.cs" />
     <Compile Include="clases\cajas.cs" />
     <Compile Include="clases\cargos.cs" />

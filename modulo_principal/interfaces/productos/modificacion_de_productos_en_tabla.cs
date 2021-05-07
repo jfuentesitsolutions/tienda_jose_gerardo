@@ -603,6 +603,7 @@ namespace interfaces.productos
                 exis.Idsuc = tabla_productos.Rows[e.RowIndex].Cells[1].Value.ToString();
                 exis.Cantidad = tabla_productos.Rows[e.RowIndex].Cells[11].Value.ToString();
                 exis.ShowDialog();
+                tabla_productos.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = exis.Cantidad_total.ToString();
             }
         }
 

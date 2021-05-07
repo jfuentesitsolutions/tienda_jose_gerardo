@@ -447,6 +447,12 @@
     <Compile Include="productos\agregar_proveedores.Designer.cs">
       <DependentUpon>agregar_proveedores.cs</DependentUpon>
     </Compile>
+    <Compile Include="productos\auxiliares\justificacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="productos\auxiliares\justificacion.Designer.cs">
+      <DependentUpon>justificacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="productos\existencias.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -874,6 +880,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="productos\agregar_proveedores.resx">
       <DependentUpon>agregar_proveedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="productos\auxiliares\justificacion.resx">
+      <DependentUpon>justificacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="productos\existencias.resx">
       <DependentUpon>existencias.cs</DependentUpon>
@@ -1435,6 +1444,12 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\checked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\accept1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
