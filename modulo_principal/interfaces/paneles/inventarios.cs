@@ -34,5 +34,11 @@ namespace interfaces.paneles
             farmacia.Control_de_medicina frm = new farmacia.Control_de_medicina();
             frm.ShowDialog();
         }
+
+        private void btnDeposito_Click(object sender, EventArgs e)
+        {
+            deposito.control_de__deposito frm = new deposito.control_de__deposito();
+            frm.ShowDialog();
+        }
     }
 }

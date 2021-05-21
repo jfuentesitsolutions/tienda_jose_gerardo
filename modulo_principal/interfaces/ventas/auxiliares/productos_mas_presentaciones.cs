@@ -345,7 +345,8 @@ namespace interfaces.ventas.auxiliares
             double tota = Math.Round((cantidad * preci),2, MidpointRounding.AwayFromZero);
             total = tota.ToString();
 
-            if (tablaPres.CurrentRow.Cells[4].ToString().Equals("Detalle"))
+
+            if (tablaPres.CurrentRow.Cells[4].Value.ToString().Equals("Detalle"))
             {
                 double uti = 1-Convert.ToDouble(utilidadD);
                 double utili = Math.Round((uti * preci), 2, MidpointRounding.AwayFromZero);

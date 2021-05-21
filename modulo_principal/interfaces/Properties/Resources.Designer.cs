@@ -173,6 +173,16 @@ namespace interfaces.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap beer_box_128 {
+            get {
+                object obj = ResourceManager.GetObject("beer-box_128", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap bill_32 {
             get {
                 object obj = ResourceManager.GetObject("bill_32", resourceCulture);

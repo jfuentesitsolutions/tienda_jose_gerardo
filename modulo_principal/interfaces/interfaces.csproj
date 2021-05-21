@@ -189,6 +189,12 @@
       <DependentUpon>compras_de_productos.cs</DependentUpon>
     </Compile>
     <Compile Include="control_permisos\controlador_de_permisos.cs" />
+    <Compile Include="deposito\control_de _deposito.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="deposito\control_de _deposito.Designer.cs">
+      <DependentUpon>control_de _deposito.cs</DependentUpon>
+    </Compile>
     <Compile Include="farmacia\Control de medicina.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -751,6 +757,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="compras\compras_de_productos.resx">
       <DependentUpon>compras_de_productos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="deposito\control_de _deposito.resx">
+      <DependentUpon>control_de _deposito.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="farmacia\Control de medicina.resx">
       <DependentUpon>Control de medicina.cs</DependentUpon>
@@ -1451,6 +1460,10 @@
   <ItemGroup>
     <None Include="Resources\accept1.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\beer-box_128.png" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
