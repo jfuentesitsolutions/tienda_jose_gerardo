@@ -1090,6 +1090,8 @@ namespace interfaces.Reportes.Datos {
             
             private global::System.Data.DataColumn columnpreci;
             
+            private global::System.Data.DataColumn columntotal_utili;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public detalle_ventas_farmacia_individualDataTable() {
@@ -1189,6 +1191,14 @@ namespace interfaces.Reportes.Datos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn total_utiliColumn {
+                get {
+                    return this.columntotal_utili;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1224,7 +1234,7 @@ namespace interfaces.Reportes.Datos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public detalle_ventas_farmacia_individualRow Adddetalle_ventas_farmacia_individualRow(string fecha, string docu, string nom_producto, string cant, string pre, double total, int cantidad, double preci) {
+            public detalle_ventas_farmacia_individualRow Adddetalle_ventas_farmacia_individualRow(string fecha, string docu, string nom_producto, decimal cant, string pre, double total, int cantidad, double preci, double total_utili) {
                 detalle_ventas_farmacia_individualRow rowdetalle_ventas_farmacia_individualRow = ((detalle_ventas_farmacia_individualRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         fecha,
@@ -1234,7 +1244,8 @@ namespace interfaces.Reportes.Datos {
                         pre,
                         total,
                         cantidad,
-                        preci};
+                        preci,
+                        total_utili};
                 rowdetalle_ventas_farmacia_individualRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowdetalle_ventas_farmacia_individualRow);
                 return rowdetalle_ventas_farmacia_individualRow;
@@ -1265,6 +1276,7 @@ namespace interfaces.Reportes.Datos {
                 this.columntotal = base.Columns["total"];
                 this.columncantidad = base.Columns["cantidad"];
                 this.columnpreci = base.Columns["preci"];
+                this.columntotal_utili = base.Columns["total_utili"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1276,7 +1288,7 @@ namespace interfaces.Reportes.Datos {
                 base.Columns.Add(this.columndocu);
                 this.columnnom_producto = new global::System.Data.DataColumn("nom_producto", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnnom_producto);
-                this.columncant = new global::System.Data.DataColumn("cant", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columncant = new global::System.Data.DataColumn("cant", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncant);
                 this.columnpre = new global::System.Data.DataColumn("pre", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnpre);
@@ -1286,6 +1298,8 @@ namespace interfaces.Reportes.Datos {
                 base.Columns.Add(this.columncantidad);
                 this.columnpreci = new global::System.Data.DataColumn("preci", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnpreci);
+                this.columntotal_utili = new global::System.Data.DataColumn("total_utili", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntotal_utili);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2757,10 +2771,10 @@ namespace interfaces.Reportes.Datos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string cant {
+            public decimal cant {
                 get {
                     try {
-                        return ((string)(this[this.tabledetalle_ventas_farmacia_individual.cantColumn]));
+                        return ((decimal)(this[this.tabledetalle_ventas_farmacia_individual.cantColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("El valor de la columna \'cant\' de la tabla \'detalle_ventas_farmacia_individual\' es" +
@@ -2837,6 +2851,23 @@ namespace interfaces.Reportes.Datos {
                 }
                 set {
                     this[this.tabledetalle_ventas_farmacia_individual.preciColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public double total_utili {
+                get {
+                    try {
+                        return ((double)(this[this.tabledetalle_ventas_farmacia_individual.total_utiliColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'total_utili\' de la tabla \'detalle_ventas_farmacia_individ" +
+                                "ual\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledetalle_ventas_farmacia_individual.total_utiliColumn] = value;
                 }
             }
             
@@ -2934,6 +2965,18 @@ namespace interfaces.Reportes.Datos {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetpreciNull() {
                 this[this.tabledetalle_ventas_farmacia_individual.preciColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Istotal_utiliNull() {
+                return this.IsNull(this.tabledetalle_ventas_farmacia_individual.total_utiliColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Settotal_utiliNull() {
+                this[this.tabledetalle_ventas_farmacia_individual.total_utiliColumn] = global::System.Convert.DBNull;
             }
         }
         

@@ -1135,3 +1135,4 @@ H:\proyecto_tienda\tienda_jose_gerardo\modulo_principal\interfaces\obj\Debug\int
 H:\proyecto_tienda\tienda_jose_gerardo\modulo_principal\interfaces\obj\Debug\interfaces.Reportes.Interfaz.auxiliares.tipos_marcas.resources
 H:\proyecto_tienda\tienda_jose_gerardo\modulo_principal\interfaces\obj\Debug\interfaces.ventas.auxiliares.validacion_autorizacion.resources
 H:\proyecto_tienda\tienda_jose_gerardo\modulo_principal\interfaces\obj\Debug\interfaces.productos.auxiliares.justificacion.resources
+H:\proyecto_tienda\tienda_jose_gerardo\modulo_principal\interfaces\obj\Debug\interfaces.deposito.control_de__deposito.resources

@@ -168,7 +168,8 @@ and sp.idsucursal_producto = "+idsu+@"
             try
             {
                 return op.Consultar(@"select vt.fecha, dvt.idventa_ticket as docu, p.nom_producto, dvt.cantidad_paquete as cant,
-concat(pre.nombre_presentacion, 'x', pp.cantidad_unidades) as pre, dvt.precio_venta as preci, dvt.total, dvt.cantidad
+concat(pre.nombre_presentacion, 'x', pp.cantidad_unidades) as pre, dvt.precio_venta as preci, dvt.total, dvt.cantidad,
+dvt.cantidad*dvt.utilidad as total_utili
 from detalles_ventas_ticket dvt, ventas_tickets vt, ventas v,
 presentaciones_productos pp, presentaciones pre,
 sucursales_productos sp, productos p
@@ -180,7 +181,8 @@ and pp.idsucursal_producto = sp.idsucursal_producto
 and sp.idproducto = p.idproducto and p.idcategoria = 61 and v.idcaja = " + idcaja + @"
 union
 select vf.fecha, dvf.idventa_factura as docu, p.nom_producto, dvf.cantidad as canti,
-concat(pre.nombre_presentacion, 'x', pp.cantidad_unidades) as pre, dvf.precio_venta as preci, dvf.total, dvf.cantidad
+concat(pre.nombre_presentacion, 'x', pp.cantidad_unidades) as pre, dvf.precio_venta as preci, dvf.total, dvf.cantidad,
+dvf.cantidad*dvf.utilidad as total_utili
 from detalles_ventas_factura dvf, ventas_factura vf, ventas v,
 presentaciones_productos pp, presentaciones pre,
 sucursales_productos sp, productos p
@@ -204,7 +206,8 @@ and sp.idproducto = p.idproducto and p.idcategoria = 61 and v.idcaja = " + idcaj
             try
             {
                 return op.Consultar(@"select vt.fecha, dvt.idventa_ticket as docu, p.nom_producto, dvt.cantidad_paquete as cant,
-concat(pre.nombre_presentacion,'x',pp.cantidad_unidades)  as pre, dvt.precio_venta as preci, dvt.total, dvt.cantidad
+concat(pre.nombre_presentacion,'x',pp.cantidad_unidades)  as pre, dvt.precio_venta as preci, dvt.total, dvt.cantidad,
+dvt.cantidad*dvt.utilidad as total_utili
 from detalles_ventas_ticket dvt, ventas_tickets vt, ventas v,
 presentaciones_productos pp, presentaciones pre,
 sucursales_productos sp, productos p
@@ -217,7 +220,8 @@ and sp.idproducto = p.idproducto and p.idcategoria = 61
 and vt.fecha between '" + fechai + @" 00:00:00' and '" + fechaf + @" 23:59:59'
 union
 select vf.fecha, dvf.idventa_factura as docu, p.nom_producto, dvf.cantidad as canti,
-concat(pre.nombre_presentacion, 'x', pp.cantidad_unidades) as pre, dvf.precio_venta as preci, dvf.total, dvf.cantidad
+concat(pre.nombre_presentacion, 'x', pp.cantidad_unidades) as pre, dvf.precio_venta as preci, dvf.total, dvf.cantidad,
+dvf.cantidad*dvf.utilidad as total_utili
 from detalles_ventas_factura dvf, ventas_factura vf, ventas v,
 presentaciones_productos pp, presentaciones pre,
 sucursales_productos sp, productos p
